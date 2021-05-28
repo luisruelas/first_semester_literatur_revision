@@ -1,0 +1,141 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Journal Article
+% LaTeX Template
+% Version 1.4 (15/5/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com) with extensive modifications by
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[twoside,twocolumn]{article}
+\usepackage[sorting=none]{biblatex}
+\bibliography{Bibliography}
+
+\usepackage{blindtext} % Package to generate dummy text throughout this template 
+
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.05} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+\usepackage[english]{babel} % Language hyphenation and typographical rules
+
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+
+\usepackage{enumitem} % Customized lists
+\setlist[itemize]{noitemsep} % Make itemize lists more compact
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\roman{subsection}} % roman numerals for subsections
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[C]{Running title $\bullet$ May 2016 $\bullet$ Vol. XXI, No. 1} % Custom header text
+\fancyfoot[RO,LE]{\thepage} % Custom footer text
+
+\usepackage{titling} % Customizing the title section
+
+\usepackage{hyperref} % For hyperlinks in the PDF
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\setlength{\droptitle}{-4\baselineskip} % Move the title up
+
+\pretitle{\begin{center}\Huge\bfseries} % Article title formatting
+\posttitle{\end{center}} % Article title closing formatting
+\title{ANTECEDENTES TÉNICOS E HISTÓRICOS DE LAS REDES FISIOLÓGICAS} % Article title
+\author{%
+\textsc{Ruben Yvan Marteen Fossion} \\[1ex]
+\textsc{Claudia Lerma Gonzalez} \\[1ex]
+\textsc{Jesus Espinal Enriquez} \\[1ex] % Your name
+\textsc{Luis Esteban Ruelas} \\[1ex] % Your name
+\normalsize Universidad Nacional Autónoma de México
+ (Programa de Doctorado en Ciencias Biomédicas)\\ % Your institution
+%\and % Uncomment if 2 authors are required, duplicate these 4 lines if more
+%\textsc{Jane Smith}\thanks{Corresponding author} \\[1ex] % Second author's name
+%\normalsize University of Utah \\ % Second author's institution
+%\normalsize \href{mailto:jane@smith.com}{jane@smith.com} % Second author's email address
+}
+\date{28 de mayo de 2021} % Leave empty to omit a date
+\renewcommand{\maketitlehookd}{%
+\begin{abstract}
+\noindent \blindtext % Dummy abstract text - replace \blindtext with your abstract text
+\end{abstract}
+}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+\renewcommand{\abstractname}{Resumen}
+% Print the title
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\section{Introducción}
+
+%------------------------------------------------
+
+\section{Métodos}
+
+%------------------------------------------------
+
+\section{Resultados}
+La creación e interpretación de redes fisiológicas es un proceso que implica la fusión de varios elementos, que incluyen:
+\begin{itemize}
+  \item \textbf{Identificacíón y definición de los nodos que conformarán la red:} Se definen las señales que formarán parte de la red a forma de nodos.
+  \item \textbf{Métodos para definir los enlaces:} El método que se va a utilizar para acoplar las señales y así determinar los enlaces de la red.
+  \item \textbf{Cálculo e interpretación de propiedades topológicas y dinámicas:} Una vez contruida la red, se deben realizar los análisis dinámicos y topográficos pertinentes e interpetar los resultados.
+\end{itemize}
+Para cumplir con estos tres objetivos se han utilizado diversas téncnicas a través de los años, las cuales se describen a continuación.
+\subsection{Time Delay Stability (TDS)}
+La primera innovación propuesta por el doctor Plamen Ivanov en el año 2012 es el TDS\cite{bashan2012network}, los sistemas fisiológicos funcionan a través de un conjunto de retroalimentaciones positivas y negativas, donde el aumento en una de las señales debería llevar al aumento o disminución de las señales \textit{acopladas} a ella. Es posible medir estto a través de correlación simpĺe, pero en ese caso se perdería la relación si estas señales están desfasadas en el tiempo.
+Para resolver este problema, se puede recurrir a la segmentación de las señales y el calculo de su función de correlación dandonos así el desfase de una señal con respecto a otra. Pero la fuerza del método de la TDD está en tomar los valores $T$ de la función de correlación y compararlos en sí, creando entonces una evaluación de su \textit{estabilidad}.
+
+Para el cálculo de la TDD, el primer paso para el cálculo de esta métrica consiste en tomar dos series de tiempo (\texttt{x} y \texttt{y}) y dividirlas en segmentos de tiempo constantes \texttt{v} de magnitud constante \texttt{N} (por ejemplo de 60s cada uno) y definir un entrecruzamiento entre ambos \texttt{L} (30s).
+Posteriormente se deberá normalizar estos segmentos \texttt{v} a una unidad media de su desviación estándar*****. De esta forma se pueden comparar variables de escalas diferentes.
+Luego se realiza una función de correlación cruzada $¿incluir la función de correlacioń cruzada?$ para cada segmento, maximizando la función hasta desde $T = 0$ hasta $T = N$, y se debe conservar ese valor de $T$, que deberá compararse con los valores $T$ de los segmentos sucesivos y anteriores.
+Si el valor de $T$ varía poco en las iteraciones, se considera que estas dos señales están "\textit{acopladas}".
+
+Sin embargo, se sabe que en la trancisión de estados fisiológicos, la escala de tiempo en la que operan los mecanismos reguladores también cambia e incluso el acoplamiento puede ocurrir a dos escalas de tiempo diferentes en el mismo estado fisiológico\cite{bartsch2014coexisting}.
+Por esta razón, es util recurrir a diferentes métodos para detectar acoplamiento además del time delay stability.
+
+%------------------------------------------------
+
+\section{Discusión}
+
+%----------------------------------------------------------------------------------------
+%	REFERENCE LIST
+%----------------------------------------------------------------------------------------
+\renewcommand\refname{Referencias}
+\printbibliography
+\end{document}
