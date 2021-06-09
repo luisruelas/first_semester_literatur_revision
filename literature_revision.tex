@@ -56,7 +56,7 @@
 \pagestyle{fancy} % All pages have headers and footers
 \fancyhead{} % Blank out the default header
 \fancyfoot{} % Blank out the default footer
-\fancyhead[C]{Running title $\bullet$ May 2016 $\bullet$ Vol. XXI, No. 1} % Custom header text
+%\fancyhead[C]{Running title $\bullet$ May 2016 $\bullet$ Vol. XXI, No. 1} % Custom header text
 \fancyfoot[RO,LE]{\thepage} % Custom footer text
 
 \usepackage{titling} % Customizing the title section
@@ -148,8 +148,18 @@ En este caso se van a graficar los eventos de la segunda señal no oscilatoria (
 Una vez hecho esto se puede identificar la fase respiratoria instantanea $\phi_r(t)$, correspondiente a un evento de electrocardiograma determinado. Así  $\phi_r(t)$ representará el angulo de la señal $r(t)$ y su transformada de Hilbert $r_H(t)$ que a su vez corresponde a la parte imaginaria de $\phi_r(t)$.
 La gráfica de angulos $\phi_r(t_k)$ nos otorga el sincrograma que se puede observar en la Figura \ref{fig:synchrogram}. Se define entonces el acoplamiento si existe un numero $n$ de lineas paralelas, donde $n$ es el número de latidos por ciclo respiratorio, como en la Figura \ref{fig:linePlotting}.
 
-Así pues se obtienen un método de acoplamiento que puede ver sincronizaciones diferentes a las del TDS, como se puede observar en la Figura \ref{coexistingFormOfCoupling.png} que evidencía acoplamiento en TDS (azul) diferente al PS (rojo).
+Así pues se obtienen un método de acoplamiento que puede ver sincronizaciones diferentes a las del TDS, como se puede observar en la Figura \ref{fig:coexistingFormOfCoupling} que evidencía acoplamiento en TDS (azul) diferente al PS (rojo).
 %------------------------------------------------
+
+\subsection{Aplicación de teoría de redes}
+Los estudios publicados en fisiología de redes han utilizado desde sus inicios análisis básicos de redes para obtener información posterior a la creación de sus matricesd de adyacencia.
+Desde los primeros estudios incluyendo redes fisiológicas se ha podido diferenciar estados fisiológicos por medio de métricas topográficas simples como se observa en la Figura \ref{fig:topograficProperties}
+
+El equipo del Dr Plamen incorporó un análisis topográfico basado en el grado de los nodos y la fuerza de los enlaces (en unidades de \% de TDS) para diferenciar las redes fisiológicas en los estados fisiológicos de su interés \cite{bashan2012network}.
+Se puede ver en la Figura \ref{fig:degreeDist} como la fuerza entre los enlaces en relación al grado de los mismos puede discernir entre estados fisiológicos, particularmente entre despierto y sueño profundo.
+
+Análisis más recientes han incorporado técnicas más avanzadas de redes fisiológicas, que incluyen algoritmos de detencción de comunidades como Louvain y caminantes aleatorios\cite{barajas2021sex}\cite{barajas2021physiological}\cite{easton2020metabolic}\cite{chmiel2014spreading}.
+Estas técnicas nos permiten observar como se agrupan los nodos en diferentes estados fisiológicos, y llama la atención como en ciertos estados, los mismos nodos se agrupan en diferentes comunidades, y además que las comunidades tienen diferentes enlaces que a su vez tienen diferentes características, como en la Figura\ref{fig:sexDifferences}.
 
 \section{Discusion}
 
@@ -177,5 +187,20 @@ Así pues se obtienen un método de acoplamiento que puede ver sincronizaciones 
   \includegraphics[width=8cm]{linePlotting.png}
   \caption{Grafica de 3 líneas horizontales paralelas formadas, formadas por el primer, segundo y tercer latido dentro de 3 ciclos respiratorios consecutivos. Se puede ver claramente como hay una sincronización 3:1, con 3 latidos cardiacos en cada ciclo respiratorio}
   \label{fig:linePlotting}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=8cm]{degreeDist.png}
+  \caption{La fuerza de los enlaces va decreciendo conforme al grado del nodo aumenta en cada uno de los diferentes estados fisiológicos en estudio (diferentes estados de sueño y estado de despierto). La caída en el estado de sueño profundo es más pronunciada que en la de despierto.}
+  \label{fig:degreeDist}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=8cm]{topograficProperties.png}
+  \caption{En la figura a) se puede observar una diferencia clara en el número de enlaces que tiene la red de despierto (W) contra la de sueño profundo (DS). En la b) se puede observar una diferencia entre la fuerza promedio de los enlaces entre los mismos grupos.}
+  \label{fig:topograficProperties}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=8cm]{sexDifferences.png}
+  \caption{Observar las diferencias entre las redes que representan dos estados fisiológicos visiblemente diferentes: sexo masculino a la izquierda y femenino a la derecha. El tamaño del nodo representa su eigencentralidad, el algoritmo de detección de comunidades Louvain produce las comunidades que se reperesentan en los colores de fondo. El ancho del enlace representa la correlación de Spearman entre los nodos y además podemos ver enlaces intracomunidad en negro y con rojo los enlaces entre comunidades.}
+  \label{fig:sexDifferences}
 \end{figure}
 \end{document}
