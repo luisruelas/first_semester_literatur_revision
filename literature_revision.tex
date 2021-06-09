@@ -21,9 +21,10 @@
 
 \documentclass[twoside,twocolumn]{article}
 \usepackage[sorting=none]{biblatex}
-\bibliography{Bibliography}
-
-\usepackage{blindtext} % Package to generate dummy text throughout this template 
+\bibliography{Bibliography.bib}
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage{blindtext} % Package to generate dummy text throughout this template
 
 \usepackage[sc]{mathpazo} % Use the Palatino font
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
@@ -110,7 +111,7 @@
 %------------------------------------------------
 
 \section{Resultados}
-La creación e interpretación de redes fisiológicas es un proceso que implica la fusión de varios elementos\cite{easton2020metabolic}, que incluyen:
+La creación e interpretación de redes fisiológicas es un proceso que implica la fusión de varios elementos \cite{barajas2021sex}, que incluyen:
 \begin{itemize}
   \item \textbf{Identificacíón y definición de los nodos que conformarán la red:} Se definen las señales que formarán parte de la red a forma de nodos.
   \item \textbf{Métodos para definir los enlaces:} El método que se va a utilizar para acoplar las señales y así determinar los enlaces de la red.
@@ -118,7 +119,7 @@ La creación e interpretación de redes fisiológicas es un proceso que implica 
 \end{itemize}
 Para cumplir con estos tres objetivos se han utilizado diversas téncnicas a través de los años, las cuales se describen a continuación.
 \subsection{Time Delay Stability (TDS)}
-La primera innovación propuesta por el doctor Plamen Ivanov en el año 2012 es el TDS\cite{bashan2012network}, los sistemas fisiológicos funcionan a través de un conjunto de retroalimentaciones positivas y negativas, donde el aumento en una de las señales debería llevar al aumento o disminución de las señales \textit{acopladas} a ella. Es posible medir estto a través de correlación simpĺe, pero en ese caso se perdería la relación si estas señales están desfasadas en el tiempo.
+La primera innovación propuesta por el doctor Plamen Ivanov en el año 2012 es el TDS \cite{bashan2012network}, los sistemas fisiológicos funcionan a través de un conjunto de retroalimentaciones positivas y negativas, donde el aumento en una de las señales debería llevar al aumento o disminución de las señales \textit{acopladas} a ella. Es posible medir estto a través de correlación simpĺe, pero en ese caso se perdería la relación si estas señales están desfasadas en el tiempo.
 Para resolver este problema, se puede recurrir a la segmentación de las señales y el calculo de su función de correlación dandonos así el desfase de una señal con respecto a otra. Pero la fuerza del método de la TDD está en tomar los valores $\tau$ de la función de correlación y compararlos en sí, creando entonces una evaluación de su \textit{estabilidad}.
 
 Para el cálculo de la TDD, el primer paso para el cálculo de esta métrica consiste en tomar dos series de tiempo correspondientes a dos variables fisiológicas de interés $x$ y $y$ de longitud que dividiremos en una cantidad $N_L$ de segmentos $v$ parcialmente superpuestos, todos ellos de igual longitud $L$.
@@ -133,20 +134,48 @@ esto con el fin de poder utilizar la siguiente función de correlación sobre el
 \end{equation}
 Definiremos así $\tau^v_0$ como el retraso de tiempo $\tau$ que maximice la función $C^v_{xy}$ para este segmento $v$, y definiremos una nueva serie de tiempo ${\tau^v_0}_v=1,...,N_L$.
 Consideraremos que amabas series están acopladas en los periodos de tiempo donde los valores de la nueva serie $\tau0$ se mantengan contastes.
-Aunque el TDS proporciona una medida fidedigna de acoplamiento entre dos señales y es posible utilizarla entre dos series con diferentes unidades e incluso diferente magnitudes, se ha mostrado que los sitemas fisiológicos pueden tener dos o más acoplamientes simultaneos y que operan a diferentes escalas\cite{bartsch2014coexisting}.
+Aunque el TDS proporciona una medida fidedigna de acoplamiento entre dos señales y es posible utilizarla entre dos series con diferentes unidades e incluso diferente magnitudes, se ha mostrado que los sitemas fisiológicos pueden tener dos o más acoplamientes simultaneos y que operan a diferentes escalas.
 Por lo tanto se ha propuesto utilizar diferentes métodos de acoplamiento en las señales, para capturar estos acoplamientos que pueden resultar invisibles para alguno de los métodos.
 
-\subsection{Diferentes métodos de acoplamiento}
-Si dos sistemas fisiológicos tienen dos métodos de acoplamiento que funcionan a diferentes escalas será imposible que un sólo ḿetodo (TDS) pueda detecarlos.
-Un ejemplo de esto es la frecuencia cardiaca, y su acoplamiento con la frecuencia respiratoria
+\subsection{Diferentes metodos de acoplamiento}
+Si dos sistemas fisiológicos tienen dos métodos de acoplamiento que funcionan a diferentes escalas será imposible que un sólo metodo (TDS) pueda detecarlos.
 
+Un ejemplo de esto es la frecuencia cardiaca, y su acoplamiento con la frecuencia respiratoria \cite{bartsch2014coexisting}.
+Las señales utilizadas pueden ser el flujo de aire nasal o el perímetro torácico, incluso puede crearse una nueva señal mezclando los mejores puntos de ambas \cite{bartsch2014coexisting}, que se utilizarán para crear una onda sinusal que represente el ciclo de frecuencia respiratoria como la Figura \ref{fig:sinusoidalBreathing}.
+
+Uno de los procesos para evaluar acoplamiento en señales no lineales es evaluarlas a traves de sincrogramas.
+En este caso se van a graficar los eventos de la segunda señal no oscilatoria (en este caso electrocardiograma) sobre una señal continua oscilatoria que es la señal de frecuencia respiratoria $r(t)$. El evento de segunda señal se puede definir como los picos de R $t_k$.
+Una vez hecho esto se puede identificar la fase respiratoria instantanea $\phi_r(t)$, correspondiente a un evento de electrocardiograma determinado. Así  $\phi_r(t)$ representará el angulo de la señal $r(t)$ y su transformada de Hilbert $r_H(t)$ que a su vez corresponde a la parte imaginaria de $\phi_r(t)$.
+La gráfica de angulos $\phi_r(t_k)$ nos otorga el sincrograma que se puede observar en la Figura \ref{fig:synchrogram}. Se define entonces el acoplamiento si existe un numero $n$ de lineas paralelas, donde $n$ es el número de latidos por ciclo respiratorio, como en la Figura \ref{fig:linePlotting}.
+
+Así pues se obtienen un método de acoplamiento que puede ver sincronizaciones diferentes a las del TDS, como se puede observar en la Figura \ref{coexistingFormOfCoupling.png} que evidencía acoplamiento en TDS (azul) diferente al PS (rojo).
 %------------------------------------------------
 
-\section{Discusión}
+\section{Discusion}
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------
 \renewcommand\refname{Referencias}
 \printbibliography
+\begin{figure}
+  \includegraphics[width=8cm]{coexistingFormOfCoupling.png}
+  \caption{Se pueden observar diferentes métodos de coupling existentes entre las mismas señales. En rojo PS, en azul TDS.}
+  \label{fig:coexistingFormOfCoupling}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=8cm]{sinusoidalBreathing.png}
+  \caption{Se pueden observar diferentes métodos de coupling existentes entre las mismas señales. En rojo PS, en azul TDS.}
+  \label{fig:sinusoidalBreathing}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=8cm]{synchrogram.png}
+  \caption{Sincrograma, sobre la señal oscilante (señal respiratoria), se grafican puntos incidentes de electrocardiograma $t_k$ en los ángulos de fase $phi_r(t_k)$}
+  \label{fig:synchrogram}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=8cm]{linePlotting.png}
+  \caption{Grafica de 3 líneas horizontales paralelas formadas, formadas por el primer, segundo y tercer latido dentro de 3 ciclos respiratorios consecutivos. Se puede ver claramente como hay una sincronización 3:1, con 3 latidos cardiacos en cada ciclo respiratorio}
+  \label{fig:linePlotting}
+\end{figure}
 \end{document}
