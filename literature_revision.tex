@@ -110,24 +110,35 @@
 %------------------------------------------------
 
 \section{Resultados}
-La creación e interpretación de redes fisiológicas es un proceso que implica la fusión de varios elementos, que incluyen:
+La creación e interpretación de redes fisiológicas es un proceso que implica la fusión de varios elementos\cite{easton2020metabolic}, que incluyen:
 \begin{itemize}
   \item \textbf{Identificacíón y definición de los nodos que conformarán la red:} Se definen las señales que formarán parte de la red a forma de nodos.
   \item \textbf{Métodos para definir los enlaces:} El método que se va a utilizar para acoplar las señales y así determinar los enlaces de la red.
-  \item \textbf{Cálculo e interpretación de propiedades topológicas y dinámicas:} Una vez contruida la red, se deben realizar los análisis dinámicos y topográficos pertinentes e interpetar los resultados.
+  \item \textbf{Cálculo e interpretación de propiedades topológicas y dinámicas:} Una vez construida la red, se deben realizar los análisis dinámicos y topográficos pertinentes e interpetar los resultados.
 \end{itemize}
 Para cumplir con estos tres objetivos se han utilizado diversas téncnicas a través de los años, las cuales se describen a continuación.
 \subsection{Time Delay Stability (TDS)}
 La primera innovación propuesta por el doctor Plamen Ivanov en el año 2012 es el TDS\cite{bashan2012network}, los sistemas fisiológicos funcionan a través de un conjunto de retroalimentaciones positivas y negativas, donde el aumento en una de las señales debería llevar al aumento o disminución de las señales \textit{acopladas} a ella. Es posible medir estto a través de correlación simpĺe, pero en ese caso se perdería la relación si estas señales están desfasadas en el tiempo.
-Para resolver este problema, se puede recurrir a la segmentación de las señales y el calculo de su función de correlación dandonos así el desfase de una señal con respecto a otra. Pero la fuerza del método de la TDD está en tomar los valores $T$ de la función de correlación y compararlos en sí, creando entonces una evaluación de su \textit{estabilidad}.
+Para resolver este problema, se puede recurrir a la segmentación de las señales y el calculo de su función de correlación dandonos así el desfase de una señal con respecto a otra. Pero la fuerza del método de la TDD está en tomar los valores $\tau$ de la función de correlación y compararlos en sí, creando entonces una evaluación de su \textit{estabilidad}.
 
-Para el cálculo de la TDD, el primer paso para el cálculo de esta métrica consiste en tomar dos series de tiempo (\texttt{x} y \texttt{y}) y dividirlas en segmentos de tiempo constantes \texttt{v} de magnitud constante \texttt{N} (por ejemplo de 60s cada uno) y definir un entrecruzamiento entre ambos \texttt{L} (30s).
-Posteriormente se deberá normalizar estos segmentos \texttt{v} a una unidad media de su desviación estándar*****. De esta forma se pueden comparar variables de escalas diferentes.
-Luego se realiza una función de correlación cruzada $¿incluir la función de correlacioń cruzada?$ para cada segmento, maximizando la función hasta desde $T = 0$ hasta $T = N$, y se debe conservar ese valor de $T$, que deberá compararse con los valores $T$ de los segmentos sucesivos y anteriores.
-Si el valor de $T$ varía poco en las iteraciones, se considera que estas dos señales están "\textit{acopladas}".
+Para el cálculo de la TDD, el primer paso para el cálculo de esta métrica consiste en tomar dos series de tiempo correspondientes a dos variables fisiológicas de interés $x$ y $y$ de longitud que dividiremos en una cantidad $N_L$ de segmentos $v$ parcialmente superpuestos, todos ellos de igual longitud $L$.
+La superposición puede definirse como convenga, en este ejemplo usaremos $L/2$
+Posteriormente se normalizará la serie de tiempo de cada segmento $v$ a media cero y unidad de desviación estandar por medio de la siguiente fórmula:
+\begin{equation}
+  v_t = \frac{v_t-\bar{v}}{\sigma} ,
+\end{equation}
+esto con el fin de poder utilizar la siguiente función de correlación sobre el segmento $v = 1,...,N_L$ obtenido posterior a la normalización:
+\begin{equation}
+  C^v_{xy}\tau=\frac{1}{L}\sum^L_{i=1}x^v_{i+(v-1)L/2}y^v_{i+(v-1)L/2+\tau} ,
+\end{equation}
+Definiremos así $\tau^v_0$ como el retraso de tiempo $\tau$ que maximice la función $C^v_{xy}$ para este segmento $v$, y definiremos una nueva serie de tiempo ${\tau^v_0}_v=1,...,N_L$.
+Consideraremos que amabas series están acopladas en los periodos de tiempo donde los valores de la nueva serie $\tau0$ se mantengan contastes.
+Aunque el TDS proporciona una medida fidedigna de acoplamiento entre dos señales y es posible utilizarla entre dos series con diferentes unidades e incluso diferente magnitudes, se ha mostrado que los sitemas fisiológicos pueden tener dos o más acoplamientes simultaneos y que operan a diferentes escalas\cite{bartsch2014coexisting}.
+Por lo tanto se ha propuesto utilizar diferentes métodos de acoplamiento en las señales, para capturar estos acoplamientos que pueden resultar invisibles para alguno de los métodos.
 
-Sin embargo, se sabe que en la trancisión de estados fisiológicos, la escala de tiempo en la que operan los mecanismos reguladores también cambia e incluso el acoplamiento puede ocurrir a dos escalas de tiempo diferentes en el mismo estado fisiológico\cite{bartsch2014coexisting}.
-Por esta razón, es util recurrir a diferentes métodos para detectar acoplamiento además del time delay stability.
+\subsection{Diferentes métodos de acoplamiento}
+Si dos sistemas fisiológicos tienen dos métodos de acoplamiento que funcionan a diferentes escalas será imposible que un sólo ḿetodo (TDS) pueda detecarlos.
+Un ejemplo de esto es la frecuencia cardiaca, y su acoplamiento con la frecuencia respiratoria
 
 %------------------------------------------------
 
