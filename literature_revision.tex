@@ -23,6 +23,7 @@
 \usepackage[sorting=none]{biblatex}
 \bibliography{Bibliography.bib}
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage{csquotes}
 \usepackage{blindtext} % Package to generate dummy text throughout this template
 
@@ -84,7 +85,7 @@
 \date{28 de mayo de 2021} % Leave empty to omit a date
 \renewcommand{\maketitlehookd}{%
 \begin{abstract}
-\noindent El campo de las redes fisiológicas es una rama de las ciencias biológicas de reciente creación, iniciado por el Dr. Plamen Ch. Ivanov en el año 2012 con su publicación "Network physiology reveals relations between network topology and physiological function" en la revista Nature communications. Después de esta publicación, múltiples grupos de investigación han utilizado la ciencia de redes en sus respectivas áreas para obtener nuevas perspectivas multisistémicas e integrales en diversos estados fisiológicos. Las técnicas para obtener e interpretar éstas redes han evolucionado a través del tiempo. Nos encontramos ante un campo prometedor en constante y rápida evolución.
+\noindent El campo de las redes fisiológicas es una rama de las ciencias biológicas de reciente creación, iniciado por el Dr. Plamen Ch. Ivanov en el año 2012 con su publicación "Network physiology reveals relations between network topology and physiological function" en la revista Nature Communications. Después de esta publicación, múltiples grupos de investigación han utilizado la ciencia de redes en sus respectivas áreas biológicas para obtener nuevas perspectivas multisistémicas e integrales en diversos estados fisiológicos. Las técnicas para obtener e interpretar éstas redes han evolucionado a través del tiempo. Nos encontramos ante un campo prometedor en rápida y continua evolución.
 \end{abstract}
 }
 
@@ -104,16 +105,27 @@ Las redes fisiológicas son un campo de reciente creación, definido por el grup
 
 Después de éste artículo se han abierto una multitud de aplicaciones para esta nueva rama de estudio en diversas áreas de las ciencias de la salud.
 Muchos estudios han sido publicados utilizando la fisiología de redes para separar estados fisiológicos utilizando todo tipo de parámetros como edad, sexo, variables de laboratorio entre otros.
-Aplicando las técnicas de teoría de redes todavía se pueden obtener perspectivas que son congruentes con el conocimiento previo acerca de estos sistemas, pero también se observan diferencias en las que se puede profundizar.
+
+Aplicando las técnicas de teoría de redes se obtienen perspectivas nuevas acerca de los sistemas biológicos.
+Ejemplo de estás técnicas son algoritmos de agrupamiento, que al reunir en grupos de nodos (llamados también comunidades) que tienen características comunes, nos dan información acerca de como funciona un sistema de forma interna, algo que, en muchos casos, está profundamente estudiado dese una perspectiva teórica.
+Sin embargo las conexiones entre diferentes comunidades nos ofrece un paradigma multisistémico, que otorga una perspectiva novedosa al abordar un sistema como parte un complejo más grande con el cual se relaciona de forma objetiva y del cual, generalmente, se aisla para su estudio en una disciplina en cuestión.
+Para mencionar un caso, se pueden describir redes fisiológicas con enlaces entre señales electroencefalográficas y frecuencia cardiaca en diferentes estados fisiológicos, mostrando relación entre dos sistemas corporales (neurológcio y cardiovascular) que generalmente se estudian de forma aislada.
+
 %------------------------------------------------
 
 \section{Métodos}
-Debido a la reciente creación del campo en cuestión, se decide revisar todos los artículos del Dr. Plamen Ivanov que incluyan redes fisiológicas a partir del año 2012 (inclusivo).
-Se utiliza una búsqueda por autor (el Dr Plamen Ivanov) y todos los campos (que contengan la palabra clave "network"). Al final la búsqueda queda planteada de la siguiente manera:
+Debido al corto tiempo de vida del campo en cuestión, se decide revisar todos los artículos del Dr. Plamen Ivanov que incluyan redes fisiológicas a partir del año 2012 (inclusivo).
+Se utiliza una búsqueda por autor (el Dr Plamen Ivanov) con el fin de no omitir artículos relevantes del fundador y principal publicador en el tema. Posteriormente se plantean en la búsqueda todos los campos que contengan la palabra clave "network". Al final la primera búsqueda queda planteada de la siguiente manera:
 
 \texttt(Ivanov, Plamen Ch[Author]) AND (network) ,
 
 Obteniendo como resultado 25 coincidencias. Se realiza una lectura diagonal de cada uno de los 25 artículos para obtener una perspectiva de los diferentes elementos históricos y técnicos que conforman redes fisiológicas.
+
+Se plantea una segúnda búsqueda con el término "'network physiology'", que da como resultado 243 resultados.
+
+Se lee a través del título y resumen de todos ellos para encontrar los que son pertinentes a la fisiología de redes en seres humanos y que no hubieran sido incluídos en la búsqueda anterior. Se encontraron 22 artículos, a los cuales se les aplica la lectura en diagonal.
+
+Además se presta especial atención a las aplicaciones de fisiología de redes por parte de la UNAM en el centro de estudios de la complejidad C3, que ha sido impulado por el Dr. A Barajas y la Dra. A.L. Rivera.
 
 Una vez obtenido este conocimiento, se comienza la redacción de los resultados, dividiendo la temática en 4 subtítulos relevantes:
 \begin{itemize}
@@ -123,7 +135,6 @@ Una vez obtenido este conocimiento, se comienza la redacción de los resultados,
   \item \textbf{Problemas abordados por medio de redes fisiológcias}: sección prevista para comentar la cantidad de aplicaciones dentro de los diversos campos biológicos en ciencias de la salud que pueden beneficiarse del estudio de las redes fisiológicas.
 \end{itemize}
 
-Se complementan los resultados con artículos que contengan redes fisiológicas por parte del grupo de investigación del Dr Martinez Barajas, los cuales se han obtenido por recomendación del Dr. Ruben Fossion, así como las referencias citadas por el Dr. Plamen Ivanov en sus variados artículos.
 %------------------------------------------------
 
 \section{Resultados}
@@ -135,65 +146,107 @@ La creación e interpretación de redes fisiológicas es un proceso que implica 
 \end{itemize}
 Para cumplir con estos tres objetivos se han utilizado diversas técnicas a través de los años, las cuales se describen a continuación.
 \subsection{Time Delay Stability (TDS)}
-La primera innovación propuesta por el doctor Plamen Ivanov en el año 2012 es el TDS \cite{bashan2012network}, los sistemas fisiológicos funcionan a través de un conjunto de retroalimentaciones positivas y negativas, donde el aumento en una de las señales debería llevar al aumento o disminución de las señales \textit{acopladas} a ella. Es posible medir esto a través de correlación simpĺe, pero en ese caso se perdería la relación si estas señales están desfasadas en el tiempo.
-Para resolver este problema, se puede recurrir a la segmentación de las señales y el cálculo de su función de correlación dándonos así el desfase de una señal con respecto a otra. Pero la fuerza del método de la TDD está en tomar los valores $\tau$ de la función de correlación y compararlos en sí, creando entonces una evaluación de su \textit{estabilidad}.
+La primera innovación propuesta por el doctor Plamen Ivanov en el año 2012 es el time delay stability {TDS} \cite{bashan2012network}, los sistemas fisiológicos funcionan a través de un conjunto de retroalimentaciones positivas y negativas, donde el aumento en una de las señales debería llevar al aumento o disminución de las señales \textit{acopladas} a ella. Es posible medir esto a través de correlación simpĺe, pero en ese caso se perdería la relación si los cambios en una señal tardaran un tiempo determinadas en verse reflejadas en la otra (aún cuando este tiempo de "desfase" fuera constante).
+Para resolver este problema, se puede recurrir a la segmentación de las señales y el cálculo de su función de correlación dándonos así el desfase de una señal con respecto a otra. Pero la fuerza del método de la TDS está en tomar los valores $\tau$ de la función de correlación y compararlos en sí, creando entonces una evaluación de su \textit{estabilidad}.
 
-Para el cálculo de la TDD, el primer paso para el cálculo de esta métrica consiste en tomar dos series de tiempo correspondientes a dos variables fisiológicas de interés $x$ y $y$ de longitud que dividiremos en una cantidad $N_L$ de segmentos $v$ parcialmente superpuestos, todos ellos de igual longitud $L$.
+Para el cálculo de la TDS, el primer paso para el cálculo de esta métrica consiste en tomar dos series de tiempo correspondientes a dos variables fisiológicas de interés $x$ y $y$ con un número de puntos $N$ que dividiremos en una número $N_L$ de segmentos $v$ parcialmente superpuestos, todos ellos de igual longitud $L$.
 La superposición puede definirse como convenga, en este ejemplo usaremos $L/2$
-Posteriormente se normalizará la serie de tiempo de cada segmento $v$ a media cero y unidad de desviación estándar por medio de la siguiente fórmula:
+Posteriormente se normalizará la serie de tiempo de cada segmento $v_{1...N_L}$ a media cero y desviación estándar unitaria por medio de la siguiente fórmula:
 \begin{equation}
-  v_t = \frac{v_t-\bar{v}}{\sigma} ,
+  v^\prime_t = \frac{x_t-\bar{x}}{\sigma} ,
 \end{equation}
-esto con el fin de poder utilizar la siguiente función de correlación sobre el segmento $v = 1,...,N_L$ obtenido posterior a la normalización:
+esto con el fin de poder utilizar la siguiente función de correlación sobre cada uno de los segmentos, obtenido posterior a la normalización:
 \begin{equation}
-  C^v_{xy}\tau=\frac{1}{L}\sum^L_{i=1}x^v_{i+(v-1)L/2}y^v_{i+(v-1)L/2+\tau} ,
+  C^v_{xy}(\tau)=\frac{1}{L}\sum^L_{i=1}x^v_{i+(v-1)L/2}y^v_{i+(v-1)L/2+\tau} ,
 \end{equation}
-Definiremos así $\tau^v_0$ como el retraso de tiempo $\tau$ que maximice la función $C^v_{xy}$ para este segmento $v$, y definiremos una nueva serie de tiempo ${\tau^v_0}_v=1,...,N_L$.
-Consideraremos que ambas series están acopladas en los periodos de tiempo donde los valores de la nueva serie $\tau0$ se mantengan constantes.
-Aunque el TDS proporciona una medida fidedigna de acoplamiento entre dos señales y es posible utilizarla entre dos series con diferentes unidades e incluso diferente magnitudes, se ha mostrado que los sistemas fisiológicos pueden tener dos o más acoplamientos simultáneos y que operan a diferentes escalas.
+Definiremos así $\tau^v_0$ como el retraso de tiempo $\tau$ que maximice la función $C^v_{xy}$ para este segmento $v$, y definiremos una nueva serie de tiempo ${\tau^v_0}=1,...,N_L$.
+Consideraremos que ambas series están acopladas en los periodos de tiempo donde los valores de la nueva serie $\tau_0$ se mantengan constantes.
+Aunque el TDS proporciona una medida fidedigna de acoplamiento entre dos señales y es posible utilizarla entre dos series con diferentes unidades (por ejemplo: frecuencia cardiaca -latidos por minuto- y presión arterial -milímiteros de mercurio) e incluso diferente magnitudes (frecuencia respiratoria -en $1x10^1$ y señal electrocardiográfica - en $1x10^{-3}V$). 
+
+Se ha mostrado que los sistemas fisiológicos pueden tener dos o más acoplamientos simultáneos y que operan a diferentes escalas.
 Por lo tanto se ha propuesto utilizar diferentes métodos de acoplamiento en las señales, para capturar estos acoplamientos que pueden resultar invisibles para alguno de los métodos.
 
 \subsection{Diferentes métodos de acoplamiento}
-Si dos sistemas fisiológicos tienen dos métodos de acoplamiento que funcionan a diferentes escalas será imposible que un sólo método (TDS) pueda detectarlos.
+Si dos sistemas fisiológicos tienen dos métodos de acoplamiento que funcionan a diferentes escalas temporales (con órdenes de magnitud de diferencia) será imposible que un sólo método (TDS) pueda detectarlos.
 
 Un ejemplo de esto es la frecuencia cardiaca, y su acoplamiento con la frecuencia respiratoria \cite{bartsch2014coexisting}.
 Las señales utilizadas pueden ser el flujo de aire nasal o el perímetro torácico, incluso puede crearse una nueva señal mezclando los mejores puntos de ambas \cite{bartsch2014coexisting}, que se utilizarán para crear una onda sinusal que represente el ciclo de frecuencia respiratoria como la Figura \ref{fig:sinusoidalBreathing}.
-
-Uno de los procesos para evaluar acoplamiento en señales no lineales es evaluarlas a través de sincrogramas.
-En este caso se van a graficar los eventos de la segunda señal no oscilatoria (en este caso electrocardiograma) sobre una señal continua oscilatoria que es la señal de frecuencia respiratoria $r(t)$. El evento de segunda señal se puede definir como los picos de R $t_k$.
+\begin{figure}[H]
+  \includegraphics[width=8cm]{sinusoidalBreathing.png}
+  \caption{Se pueden observar diferentes métodos de coupling existentes entre las mismas señales. En rojo PS, en azul TDS.}
+  \label{fig:sinusoidalBreathing}
+\end{figure}
+Uno de los procesos para evaluar acoplamiento en señales no lineales es evaluarlas a través de sincrogramas \cite{bartsch2014coexisting}.
+En este caso se van a graficar los eventos de la una segunda señal no oscilatoria (en este caso electrocardiograma) sobre una señal continua oscilatoria que es la señal de frecuencia respiratoria $r(t)$. El evento de segunda señal se puede definir como el punto más alto del complejo QRS (pico de onda R) en el electrocardiograma $t_k$.
 Una vez hecho esto se puede identificar la fase respiratoria instantanea $\phi_r(t)$, correspondiente a un evento de electrocardiograma determinado. Así  $\phi_r(t)$ representará el ángulo de la señal $r(t)$ y su transformada de Hilbert $r_H(t)$ que a su vez corresponde a la parte imaginaria de $\phi_r(t)$.
 La gráfica de ángulos $\phi_r(t_k)$ nos otorga el sincrograma que se puede observar en la Figura \ref{fig:synchrogram}. Se define entonces el acoplamiento si existe un numero $n$ de líneas paralelas, donde $n$ es el número de latidos por ciclo respiratorio, como en la Figura \ref{fig:linePlotting}.
 
-Así pues se obtienen un método de acoplamiento que puede ver sincronizaciones diferentes a las del TDS, como se puede observar en la Figura \ref{fig:coexistingFormOfCoupling} que evidencía acoplamiento en TDS (azul) diferente al PS (rojo).
+\begin{figure}[H]
+  \includegraphics[width=8cm]{linePlotting.png}
+  \caption{Grafica de 3 líneas horizontales paralelas formadas, formadas por el primer, segundo y tercer latido dentro de 3 ciclos respiratorios consecutivos. Se puede ver claramente como hay una sincronización 3:1, con 3 latidos cardiacos en cada ciclo respiratorio}
+  \label{fig:linePlotting}
+\end{figure}
+
+\begin{figure}[H]
+  \includegraphics[width=7cm]{synchrogram.png}
+  \caption{Sincrograma, sobre la señal oscilante (señal respiratoria), se grafican puntos incidentes de electrocardiograma $t_k$ en los ángulos de fase $\phi_r(t_k)$}
+  \label{fig:synchrogram}
+\end{figure}
+
+Así pues se obtienen un método de acoplamiento que puede ver sincronizaciones diferentes a las del TDS, como se puede observar en la Figura \ref{fig:coexistingFormOfCoupling} que evidencía acoplamiento en TDS (azul) diferente al sincronización de fase (PS) en (rojo).
+
+\begin{figure}[H]
+  \includegraphics[width=8cm]{coexistingFormOfCoupling.png}
+  \caption{Se pueden observar diferentes métodos de coupling existentes entre las mismas señales. En rojo PS, en azul TDS.}
+  \label{fig:coexistingFormOfCoupling}
+\end{figure}
 %------------------------------------------------
 
 \subsection{Aplicación de teoría de redes}
 Los estudios publicados en fisiología de redes han utilizado desde sus inicios análisis básicos de redes para obtener información posterior a la creación de sus matrices de adyacencia.
 Desde los primeros estudios incluyendo redes fisiológicas se ha podido diferenciar estados fisiológicos por medio de métricas topográficas simples como se observa en la Figura \ref{fig:topograficProperties}
 
+\begin{figure}[H]
+  \includegraphics[width=8cm]{topograficProperties.png}
+  \caption{En la figura a) se puede observar una diferencia clara en el número de enlaces que tiene la red de despierto (W) contra la de sueño profundo (DS). En la b) se puede observar una diferencia entre la fuerza promedio de los enlaces entre los mismos grupos.}
+  \label{fig:topograficProperties}
+\end{figure}
+
 El equipo del Dr Plamen incorporó un análisis topográfico basado en el grado de los nodos y la fuerza de los enlaces (en unidades de \% de TDS) para diferenciar las redes fisiológicas en los estados fisiológicos de su interés \cite{bashan2012network}\cite{2015Plasticity}.
 Se puede ver en la Figura \ref{fig:degreeDist} como la fuerza entre los enlaces en relación al grado de los mismos puede discernir entre estados fisiológicos, particularmente entre despierto y sueño profundo.
 
+\begin{figure}[H]
+  \includegraphics[width=8cm]{degreeDist.png}
+  \caption{La fuerza de los enlaces va decreciendo conforme al grado del nodo aumenta en cada uno de los diferentes estados fisiológicos en estudio (diferentes estados de sueño y estado de despierto). La caída en el estado de sueño profundo es más pronunciada que en la de despierto.}
+  \label{fig:degreeDist}
+\end{figure}
+
 Análisis más recientes han incorporado técnicas más avanzadas de redes fisiológicas, que incluyen algoritmos de detección de comunidades como Louvain y caminantes aleatorios\cite{barajas2021sex}\cite{barajas2021physiological}\cite{easton2020metabolic}\cite{chmiel2014spreading}.
 Estas técnicas nos permiten observar cómo se agrupan los nodos en diferentes estados fisiológicos, y llama la atención como en ciertos estados, los mismos nodos se agrupan en diferentes comunidades, y además que las comunidades tienen diferentes enlaces que a su vez tienen diferentes características, como en la Figura\ref{fig:sexDifferences}.
+
+\begin{figure}
+  \includegraphics[width=8cm]{sexDifferences.png}
+  \caption{Observar las diferencias entre las redes que representan dos estados fisiológicos visiblemente diferentes: sexo masculino a la izquierda y femenino a la derecha. El tamaño del nodo representa su eigencentralidad, el algoritmo de detección de comunidades Louvain produce las comunidades que se reperesentan en los colores de fondo. El ancho del enlace representa la correlación de Spearman entre los nodos y además podemos ver enlaces intracomunidad en negro y con rojo los enlaces entre comunidades.}
+  \label{fig:sexDifferences}
+\end{figure}
 
 \subsection{Problemas abordados por medio de redes fisiológicas}
 Las redes fisiológicas prometen ofrecer una forma de abordar los sistemas biológicos de una forma integrativa, multisistémica y objetiva, uniendo diversas señales y resumiendo sus características en estados fisiológicos discernibles\cite{ivanov2016focus}.
 Sin embargo aún son relativamente pocos los problemas que se han encarado por medio de ésta novedosa técnicas, en parte por ser un método de reciente creación.
 
 El ejemplo más clásico de estados fisiológicos estudiados por esta nueva métodología es el establecido por el grupo del Dr Plamen.
-Como ya se han comentado anteriormente, su enfoque principal radica en la clasificación de las redes fisiológicas separadas por etapas de sueño y del estado de despierto, en las cuales se han aplicado diversos abanicos de análisis matemáticos, concretamente de teoría de redes a lo largo de los años\cite{bashan2012network}\cite{lin2020dynamic}.
+Como ya se han comentado anteriormente, su enfoque principal radica en la clasificación de las redes fisiológicas separadas por etapas de sueño y del estado de despierto, en las cuales se ha aplicado un abanico diverso de análisis matemáticos, concretamente de teoría de redes a lo largo de los años\cite{bashan2012network}\cite{lin2020dynamic}.
 
 Desde la concepción de éste campo se han abordado problemas de biomarcadores fisiológicos que indican presencia de enfermedades de gran importancia en diferentes sistemas, incluyendo el sistema endocrino, hepático, pulmonar entre otros \cite{barajas2021physiological}.
 El efecto aislado de la edad como factor para separar estados fisiológicos también ha sido estudiado por diferentes grupos, encontrando claras separaciones entre las redes fisiológicas de individuos de diferentes grupos etarios \cite{easton2020metabolic}\cite{chmiel2014spreading}.
 
-Como se ha mencionado anteriormente, también se ha podido utilizar el sexo de los pacientes como un factor para dividir estados fisiológicos como lo demostró el grupo del Dr. Barajas en el año 2021\cite{barajas2021sex}.
+Como se ha mencionado anteriormente, también se ha podido utilizar el sexo de los pacientes como un factor para dividir estados fisiológicos como lo demostró el grupo de la Dra. Ana Leonor Rivera en el año 2021\cite{barajas2021sex}.
 
 En otros campos relacionados, también se ha encontrado uso para las redes fisiológicas en la identificación de enfermedades dentales que afectan la estructura craneofacial\cites{scala2014complex}.
 Por medio de diversos estudios de imagen, la medición con base en puntos antropométricos de interés y un análisis de redes, fue posible identificar diferencias entre los pacientes previo al tratamiento comparado con el mismo grupo después del tratamiento por medio del estudio de las redes formadas por estos datos.
 
 \section{Discusión}
-El nuevo campo de las redes fisiológicas proporciona un entendimiento multisistémico y novedoso en diversos campos de la ciencia.
+El nuevo campo de las redes fisiológicas proporciona un entendimiento novedoso e integral de los sistemas en diversos campos de la ciencia.
 La inclusión de teoría de redes en los primeros estudios del Dr. Plamen es relativamente pobre si lo comparamos con las técnicas de análisis que se han venido implementando en los últimos años.
 Tanto su grupo de investigación como el resto de individuos involucrados en el campo han ido incorporando cada vez más rigurosos análisis de redes.
 
@@ -206,39 +259,4 @@ Es claro que conseguir la cantidad de datos necesarios para plantear el estudio 
 %----------------------------------------------------------------------------------------
 \renewcommand\refname{Referencias}
 \printbibliography
-\begin{figure}
-  \includegraphics[width=8cm]{coexistingFormOfCoupling.png}
-  \caption{Se pueden observar diferentes métodos de coupling existentes entre las mismas señales. En rojo PS, en azul TDS.}
-  \label{fig:coexistingFormOfCoupling}
-\end{figure}
-\begin{figure}
-  \includegraphics[width=8cm]{sinusoidalBreathing.png}
-  \caption{Se pueden observar diferentes métodos de coupling existentes entre las mismas señales. En rojo PS, en azul TDS.}
-  \label{fig:sinusoidalBreathing}
-\end{figure}
-\begin{figure}
-  \includegraphics[width=8cm]{synchrogram.png}
-  \caption{Sincrograma, sobre la señal oscilante (señal respiratoria), se grafican puntos incidentes de electrocardiograma $t_k$ en los ángulos de fase $phi_r(t_k)$}
-  \label{fig:synchrogram}
-\end{figure}
-\begin{figure}
-  \includegraphics[width=8cm]{linePlotting.png}
-  \caption{Grafica de 3 líneas horizontales paralelas formadas, formadas por el primer, segundo y tercer latido dentro de 3 ciclos respiratorios consecutivos. Se puede ver claramente como hay una sincronización 3:1, con 3 latidos cardiacos en cada ciclo respiratorio}
-  \label{fig:linePlotting}
-\end{figure}
-\begin{figure}
-  \includegraphics[width=8cm]{degreeDist.png}
-  \caption{La fuerza de los enlaces va decreciendo conforme al grado del nodo aumenta en cada uno de los diferentes estados fisiológicos en estudio (diferentes estados de sueño y estado de despierto). La caída en el estado de sueño profundo es más pronunciada que en la de despierto.}
-  \label{fig:degreeDist}
-\end{figure}
-\begin{figure}
-  \includegraphics[width=8cm]{topograficProperties.png}
-  \caption{En la figura a) se puede observar una diferencia clara en el número de enlaces que tiene la red de despierto (W) contra la de sueño profundo (DS). En la b) se puede observar una diferencia entre la fuerza promedio de los enlaces entre los mismos grupos.}
-  \label{fig:topograficProperties}
-\end{figure}
-\begin{figure}
-  \includegraphics[width=8cm]{sexDifferences.png}
-  \caption{Observar las diferencias entre las redes que representan dos estados fisiológicos visiblemente diferentes: sexo masculino a la izquierda y femenino a la derecha. El tamaño del nodo representa su eigencentralidad, el algoritmo de detección de comunidades Louvain produce las comunidades que se reperesentan en los colores de fondo. El ancho del enlace representa la correlación de Spearman entre los nodos y además podemos ver enlaces intracomunidad en negro y con rojo los enlaces entre comunidades.}
-  \label{fig:sexDifferences}
-\end{figure}
 \end{document}
