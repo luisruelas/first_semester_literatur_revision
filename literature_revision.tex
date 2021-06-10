@@ -93,6 +93,7 @@
 
 \begin{document}
 \renewcommand{\abstractname}{Resumen}
+\renewcommand{\figurename}{Figura}
 % Print the title
 \maketitle
 
@@ -101,15 +102,20 @@
 %----------------------------------------------------------------------------------------
 
 \section{Introducción}
-Las redes fisiológicas son un campo de reciente creación, definido por el grupo del Dr. Plamen Ivanov en el año 2012 con un célebre artículo acerca de las diferencias entre las redes de 4 diferentes estados fisiológicos en el sueño y estado de despierto\cite{bartsch2014coexisting}.
+En las ciencias médicas existen una multitud de problemas de gran importancia, ya sea por la gravedad de los mismos, la gran cantidad de gente a la que afectan o ambas.
+Tomemos por ejemplo una de las enfermedades cardiovasculares más importantes en México: la hipertensión arterial. Causante de un 18.1\% de las muertes en México\cite{campos2018hipertension}, se diagnostica por medio de las cifras de presión arterial, una vez instaurado el tratamiento (que se da basado en las condiciones del paciente como edad y comorbilidades) el control y éxito del tratamiento se evalúa, una vez más, con la presión arterial.
+Si el paciente además tiene diabetes, se le realizan los estudios pertinentes a esta enfermedad. Si hubiera infermedad del riñón, se estudiaría con parámetros renales. En todo momento, la visión de cada uno de esos problemas se realiza desde la especialidad a la que corresponde, y realmente no existen enfoques objetivos que integren todos los sistemas implicados.
+
+Es de ésta necesidad que nace el campo de las redes fisiológicas, definido por el grupo del Dr. Plamen Ivanov en el año 2012 con un célebre artículo acerca de las diferencias entre las redes de 4 diferentes estados fisiológicos en el sueño y el estado de despierto\cite{bartsch2014coexisting}.
+Las redes fisiológicas, por medio de diversas técnicas, conectan las variables de múltiples sistemas fisiológicos y convierten esta información en una red que representa las relaciones entre las diferentes variables, dándonos así información de cómo opera el sistema de manera interna, pero a su vez, nos ofrece información acerca de su relación con el resto de los sistemas de la red.
 
 Después de éste artículo se han abierto una multitud de aplicaciones para esta nueva rama de estudio en diversas áreas de las ciencias de la salud.
 Muchos estudios han sido publicados utilizando la fisiología de redes para separar estados fisiológicos utilizando todo tipo de parámetros como edad, sexo, variables de laboratorio entre otros.
 
 Aplicando las técnicas de teoría de redes se obtienen perspectivas nuevas acerca de los sistemas biológicos.
-Ejemplo de estás técnicas son algoritmos de agrupamiento, que al reunir en grupos de nodos (llamados también comunidades) que tienen características comunes, nos dan información acerca de como funciona un sistema de forma interna, algo que, en muchos casos, está profundamente estudiado dese una perspectiva teórica.
-Sin embargo las conexiones entre diferentes comunidades nos ofrece un paradigma multisistémico, que otorga una perspectiva novedosa al abordar un sistema como parte un complejo más grande con el cual se relaciona de forma objetiva y del cual, generalmente, se aisla para su estudio en una disciplina en cuestión.
-Para mencionar un caso, se pueden describir redes fisiológicas con enlaces entre señales electroencefalográficas y frecuencia cardiaca en diferentes estados fisiológicos, mostrando relación entre dos sistemas corporales (neurológcio y cardiovascular) que generalmente se estudian de forma aislada.
+Ejemplo de estás técnicas son algoritmos de agrupamiento, que al reunir en grupos de nodos (llamados también comunidades) que tienen características comunes, nos dan información acerca de cómo funciona un sistema de forma interna, algo que, en muchos casos, está profundamente estudiado desde una perspectiva teórica.
+Sin embargo las conexiones entre diferentes comunidades nos ofrece un paradigma multisistémico, que otorga una perspectiva novedosa al abordar un sistema como parte un complejo más grande con el cual se relaciona de forma objetiva y del cual, generalmente, se aísla para su estudio en una disciplina en cuestión.
+Para mencionar un caso, se pueden describir redes fisiológicas con enlaces entre señales electroencefalográficas y frecuencia cardiaca en diferentes estados fisiológicos, mostrando relación entre dos sistemas corporales (neurológico y cardiovascular) que generalmente se estudian de forma aislada.
 
 %------------------------------------------------
 
@@ -203,7 +209,7 @@ Así pues se obtienen un método de acoplamiento que puede ver sincronizaciones 
 %------------------------------------------------
 
 \subsection{Aplicación de teoría de redes}
-Los estudios publicados en fisiología de redes han utilizado desde sus inicios análisis básicos de redes para obtener información posterior a la creación de sus matrices de adyacencia.
+Los estudios publicados en fisiología de redes han utilizado desde sus inicios análisis básicos de redes para obtener información posterior a la creación de la red fisiológica.
 Desde los primeros estudios incluyendo redes fisiológicas se ha podido diferenciar estados fisiológicos por medio de métricas topográficas simples como se observa en la Figura \ref{fig:topograficProperties}
 
 \begin{figure}[H]
@@ -230,6 +236,10 @@ Estas técnicas nos permiten observar cómo se agrupan los nodos en diferentes e
   \label{fig:sexDifferences}
 \end{figure}
 
+En otros campos relacionados, también se ha encontrado uso para las redes fisiológicas en la identificación de enfermedades dentales que afectan la estructura craneofacial\cites{scala2014complex}.
+Por medio de diversos estudios de imagen, la medición con base en puntos antropométricos de interés y un análisis de redes, fue posible identificar diferencias entre los pacientes previo al tratamiento comparado con el mismo grupo después del tratamiento por medio del estudio de las redes formadas por estos datos.
+
+
 \subsection{Problemas abordados por medio de redes fisiológicas}
 Las redes fisiológicas prometen ofrecer una forma de abordar los sistemas biológicos de una forma integrativa, multisistémica y objetiva, uniendo diversas señales y resumiendo sus características en estados fisiológicos discernibles\cite{ivanov2016focus}.
 Sin embargo aún son relativamente pocos los problemas que se han encarado por medio de ésta novedosa técnicas, en parte por ser un método de reciente creación.
@@ -237,20 +247,19 @@ Sin embargo aún son relativamente pocos los problemas que se han encarado por m
 El ejemplo más clásico de estados fisiológicos estudiados por esta nueva métodología es el establecido por el grupo del Dr Plamen.
 Como ya se han comentado anteriormente, su enfoque principal radica en la clasificación de las redes fisiológicas separadas por etapas de sueño y del estado de despierto, en las cuales se ha aplicado un abanico diverso de análisis matemáticos, concretamente de teoría de redes a lo largo de los años\cite{bashan2012network}\cite{lin2020dynamic}.
 
-Desde la concepción de éste campo se han abordado problemas de biomarcadores fisiológicos que indican presencia de enfermedades de gran importancia en diferentes sistemas, incluyendo el sistema endocrino, hepático, pulmonar entre otros \cite{barajas2021physiological}.
-El efecto aislado de la edad como factor para separar estados fisiológicos también ha sido estudiado por diferentes grupos, encontrando claras separaciones entre las redes fisiológicas de individuos de diferentes grupos etarios \cite{easton2020metabolic}\cite{chmiel2014spreading}.
+\subsubsection{Investigación en redes fisiológicas: Centro de investigación C3 de la Universidad Nacional Autónoma de México}
+La novedosa investigación del grupo de las Dra. Ana Leonor Rivera, como ya se ha mencionado con anterioridad, ha utilizado el sexo de los pacientes como un factor para dividir estados fisiológicos en el año 2021\cite{barajas2021sex}.
 
-Como se ha mencionado anteriormente, también se ha podido utilizar el sexo de los pacientes como un factor para dividir estados fisiológicos como lo demostró el grupo de la Dra. Ana Leonor Rivera en el año 2021\cite{barajas2021sex}.
-
-En otros campos relacionados, también se ha encontrado uso para las redes fisiológicas en la identificación de enfermedades dentales que afectan la estructura craneofacial\cites{scala2014complex}.
-Por medio de diversos estudios de imagen, la medición con base en puntos antropométricos de interés y un análisis de redes, fue posible identificar diferencias entre los pacientes previo al tratamiento comparado con el mismo grupo después del tratamiento por medio del estudio de las redes formadas por estos datos.
+Dentro de los abordajes de éste grupo también encontramos el enfoque, diferente al del grupo del Dr. Plamen, con la integración de variables fisiológicas tomadas en un punto en el tiempo (ejemplo: marcadores hepáticos, renales, perfil de lípidos, frecuencia respiratoria...) en contraste con las series de tiempo que se venían manejando, para Posteriormente utilizar estas variables como nodos en una red.
+Es así como se logran utilizar biomarcadores fisiológicos que indican presencia de enfermedades de gran importancia en diferentes sistemas, incluyendo el sistema endocrino, hepático, pulmonar entre otros \cite{barajas2021physiological}, representandolos como nodos en una red fisiológica, mostrando así una representación del estado fisiológico del paciente en un punto estático del tiempo Figura \ref{fig:topograficProperties}
 
 \section{Discusión}
 El nuevo campo de las redes fisiológicas proporciona un entendimiento novedoso e integral de los sistemas en diversos campos de la ciencia.
 La inclusión de teoría de redes en los primeros estudios del Dr. Plamen es relativamente pobre si lo comparamos con las técnicas de análisis que se han venido implementando en los últimos años.
 Tanto su grupo de investigación como el resto de individuos involucrados en el campo han ido incorporando cada vez más rigurosos análisis de redes.
 
-Aunque cada vez se amplía más la cantidad de patologías y estados fisiológicos que han pasado a través de un análisis de redes fisiológicas, es importante continuar creciendo esta lista, ya que aún hay muchos campos que podrían beneficiarse de esta nueva perspectiva, en especial en aquellas enfermedades altamente prevalentes que tienen los más altos índices de morbimortalidad a nivel mundial, como la hipertensión arterial y sus complicaciones o enfermedades renales.
+Aunque se continúan encontrando aplicaciones para las redes fisiológicas dentro del campo de la investigación médica y se logran discernir estados fisiológicos desde las diferentes perspectivas ya mencionadas, es importante continuar la búsqueda de nuevos enfoques, incorporar cada vez más elementos de la ciencia de redes (que ya ha aportado bastante al campo). 
+Prácticamente todas las disciplinas médicas pueden beneficiarse de esta nueva perspectiva, en especial en aquellas enfermedades altamente prevalentes que tienen los más altos índices de morbimortalidad a nivel mundial, como la hipertensión arterial y sus complicaciones o enfermedades renales.
 
 Es claro que conseguir la cantidad de datos necesarios para plantear el estudio de redes en cualquier patología es un reto para los investigadores, sin embargo el avance tecnológico que nos permite capturar series de tiempo con diversos sensores cada vez más sofistiacados ofrece soluciones nuevas cada día para solventar ésta problemática.
 
