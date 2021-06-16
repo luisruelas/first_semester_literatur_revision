@@ -22,6 +22,12 @@
 \documentclass[twoside,twocolumn]{article}
 \usepackage[sorting=none]{biblatex}
 \bibliography{Bibliography.bib}
+\bibliography{PlamenBibliography.bib}
+\bibliography{NonPlamenBibliography.bib}
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{csquotes}
@@ -104,21 +110,34 @@
 
 \section{Introducción}
 En las ciencias médicas existen una multitud de problemas de gran importancia, ya sea por la gravedad de los mismos, la gran cantidad de gente a la que afectan o ambas.
-Tomemos por ejemplo una de las enfermedades cardiovasculares más importantes en México: la hipertensión arterial. Causante de un 18.1\% de las muertes en México\cite{campos2018hipertension}, se diagnostica por medio de las cifras de presión arterial, una vez instaurado el tratamiento (que se da basado en las condiciones del paciente como edad y comorbilidades) el control y éxito del tratamiento se evalúa, una vez más, con la presión arterial.
-Si el paciente además tiene diabetes, se le realizan los estudios pertinentes a esta enfermedad. Si hubiera infermedad del riñón, se estudiaría con parámetros renales. En todo momento, la visión de cada uno de esos problemas se realiza desde la especialidad a la que corresponde, y realmente no existen enfoques objetivos que integren todos los sistemas implicados.
+Tomemos por ejemplo una de las enfermedades cardiovasculares más importantes en México: la hipertensión arterial.
+Causante de un 18.1\% de las muertes en México\cite{campos2018hipertension}, se diagnostica por medio de las cifras de presión arterial ()$\geq140/90$ al més de una primera determinación de presión arterial\cite{de2008diagnostico});
+Una vez instaurado el tratamiento (que se da basado en las condiciones del paciente como edad y comorbilidades) el control y éxito del tratamiento se evalúa, una vez más, con la presión arterial.
+Si el paciente además tiene diabetes, se le realizan los estudios pertinentes a esta enfermedad. Si estuvieramos ante una enfermedad del riñón, se estudiaría con parámetros renales. En todo momento, la visión de cada uno de esos problemas se realiza desde la especialidad a la que corresponde, y realmente no existen enfoques objetivos que integren todos los sistemas implicados.
 
-Es de ésta necesidad que nace el campo de las redes fisiológicas, definido por el grupo del Dr. Plamen Ivanov en el año 2012 con un célebre artículo acerca de las diferencias entre las redes de 4 diferentes estados fisiológicos en el sueño y el estado de despierto\cite{bartsch2014coexisting}.
-Las redes fisiológicas, por medio de diversas técnicas, conectan las variables de múltiples sistemas fisiológicos y convierten esta información en una red que representa las relaciones entre las diferentes variables, dándonos así información de cómo opera el sistema de manera interna, pero a su vez, nos ofrece información acerca de su relación con el resto de los sistemas de la red.
+El cuerpo humano, como sistema complejo, es un conjunto inmenso de componentes en constante interacción \cite{engel2010thermodynamics}.
+Como una propiedad de este tipo de sistemas, existe un llamado "punto crítico", donde coexiste el estado anterior (en el caso que nos atañe, un estado de no enfermedad) y otro estado diferente (enfermedad).
+Es justo en este punto donde ocurre una transición de fase, donde el cuerpo pasaría a un estado patológico.
+El enfoque reduccionista descrito en el párrafo anterior podrá diagnosticar la enfermedad solamente una vez que el punto crítico haya sido alcanzado y rebasado, por tanto, el sistema se encontrará en estado patológico.
 
-Después de éste artículo se han abierto una multitud de aplicaciones para esta nueva rama de estudio en diversas áreas de las ciencias de la salud.
-Muchos estudios han sido publicados utilizando la fisiología de redes para separar estados fisiológicos utilizando todo tipo de parámetros como edad, sexo, variables de laboratorio entre otros.
+Ésta es una de las necesidades que el campo de las redes fisiológicas puede tratar con naturalidad.
+Ofrece forma de estudiar las interacciones entre diferentes sistemas que conforman el cuerpo humano, de forma que podamos distinguir diferentes estados fisiológicos.
+El campo fue definido por el grupo del Dr. Plamen Ivanov en el año 2012 con un célebre artículo acerca de las diferencias entre las redes de 4 diferentes estados fisiológicos en el sueño y el estado de despierto\cite{bashan2012network}.
+Desde entonces, las redes fisiológicas (construídas con diversas herramientas y técnicas), han ofrecido un enfoque integrativo en un número de enfermedades en constante incremento, utilizando sus métodos para separar estados fisiológicos por medio de todo tipo de parámetros como edad, sexo, variables de laboratorio entre otros.
 
 Aplicando las técnicas de teoría de redes se obtienen perspectivas nuevas acerca de los sistemas biológicos.
-Ejemplo de estás técnicas son algoritmos de agrupamiento, que al reunir en grupos de nodos (llamados también comunidades) que tienen características comunes, nos dan información acerca de cómo funciona un sistema de forma interna, algo que, en muchos casos, está profundamente estudiado desde una perspectiva teórica.
-Sin embargo las conexiones entre diferentes comunidades nos ofrece un paradigma multisistémico, que otorga una perspectiva novedosa al abordar un sistema como parte un complejo más grande con el cual se relaciona de forma objetiva y del cual, generalmente, se aísla para su estudio en una disciplina en cuestión.
-Para mencionar un caso, se pueden describir redes fisiológicas con enlaces entre señales electroencefalográficas y frecuencia cardiaca en diferentes estados fisiológicos, mostrando relación entre dos sistemas corporales (neurológico y cardiovascular) que generalmente se estudian de forma aislada.
+Ejemplo de estas técnicas son algoritmos de agrupamiento, que al reunir en grupos de nodos (llamados también comunidades) que tienen características comunes, nos dan información acerca de cómo funciona un sistema de forma interna, algo que, en muchos casos, está profundamente estudiado desde una perspectiva teórica.
+Sin embargo, las conexiones entre diferentes comunidades nos ofrece un paradigma multisistémico, que otorga una perspectiva novedosa al abordar un sistema como parte un complejo más grande con el cual se relaciona de forma objetiva y del cual, generalmente, se aísla para su estudio en una disciplina en cuestión.
+Para mencionar un caso, se pueden describir redes fisiológicas con enlaces entre señales electroencefalográficas y frecuencia cardiaca en diferentes estados fisiológicos, mostrando relación entre dos sistemas corporales (neurológico y cardiovascular) que generalmente se estudian de forma aislada\cite{bashan2012network}.
 
 %------------------------------------------------
+
+\section{Marco conceptual}
+El objetivo ésta revisión bibliográfica es servir como base para el programa de Doctorado en Ciencias Biomédicas de la Universidad Nacional Autónoma de México (UNAM) al autor de la misma, brindando por medio de ella una idea general del \texttt{estado del arte} en el campo de las redes fisiológicas.
+
+La intención de documentarse con respecto a éste tema nace del trabajo del protocolo presentado para el ingreso al programa, titulado "Hipertensión Arterial: enfoque integrativo a través de una Red Cardiovascular".
+En la investigación planteada por el protocolo se pretende obtener y analizar señales fisiológicas por medio de diversas técnicas, con la finalidad de obtener un entendimiento integral de la hipertensión arterial por medio de las redes fisiológicas.
+Obtener información acerca de las ténicas para la obtención, procesamiento e interpretación de los datos resulta fundamental para el correcto desarrollo del proyecto de investigación y motiva la presente revisioń.
 
 \section{Métodos}
 Debido al corto tiempo de vida del campo en cuestión, se decide revisar todos los artículos del Dr. Plamen Ivanov que incluyan redes fisiológicas a partir del año 2012 (inclusivo).
@@ -128,12 +147,13 @@ Se utiliza una búsqueda por autor (el Dr Plamen Ivanov) con el fin de no omitir
 \texttt(Ivanov, Plamen Ch[Author]) AND (network) ,
 
 Obteniendo como resultado 25 coincidencias. Se realiza una lectura diagonal de cada uno de los 25 artículos para obtener una perspectiva de los diferentes elementos históricos y técnicos que conforman redes fisiológicas.
-Siendo así, 3 de los artículos cumplen con el criterio de inclusión (Tabla \ref{tab:plamenGroup}). Cabe hacer notar que la revisión sistemática del año 2016 de el grupo del Dr. Plamen\cite{ivanov2016focus} oriento a la revisioń del campo dental\cite{scala2014complex} y de Parkison\cite{monti2018network} con respecto a las redes fisiológicas.
+Se descartan 2 artículos que no incluyen descripción de la metodología y 7 que no tocaban el tema de redes fisiológicas. Por lo tanto quean 16 artículos que incluyen métodos para la construcción y análisis de redes fisiológicas. (Tabla \ref{tab:plamenGroup}).
 
 Se plantea una segúnda búsqueda con el término "'network physiology'", que da como resultado 243 resultados.
 
-Se lee a través del título y resumen de todos ellos para  encontrar los que son pertinentes a la fisiología de redes en seres humanos y que no hubieran sido incluídos en la búsqueda anterior. Se encontraron 22 artículos, a los cuales se les aplica la lectura en diagonal.
-Al final, 7 de los artículos cumplen con los criterios de inclusion (descritos en la Tabla \ref{tab:allGroups}).
+Se lee a través del título y resumen de todos ellos para  encontrar los que son pertinentes a la fisiología de redes en seres humanos y que no hubieran sido incluídos en la búsqueda anterior.
+Se descartan 2 artículos que no incluyen descripción de la metodología, 18 por haber sido incluídos anteriormente y 210 que no tienen tocan la temática de redes fisiológicas.
+Al final, 13 de los artículos cumplen con los criterios de inclusion (descritos en la Tabla \ref{tab:allGroups}).
 
 Además se presta especial atención a las aplicaciones de fisiología de redes por parte de la UNAM en el centro de estudios de la complejidad C3, que ha sido impulado por el Dr. A Barajas y la Dra. A.L. Rivera.
 
@@ -142,89 +162,17 @@ Una vez obtenido este conocimiento, se comienza la redacción de los resultados,
   \item \textbf{Time Delay Stability (TDS)}: por la importancia que tiene en el campo, como iniciador y amplio uso dentro del campo de las redes fisiológicas.
   \item \textbf{Diferentes métodos de acoplamiento}: ya que el descubrimiento de diferentes métodos de acoplamiento simultáneos en una misma pareja de series de tiempo es extremadamente relevante.
   \item \textbf{Aplicación de teoría de redes}: para explicar las múltiples técnicas utilizados por los diversos grupos de investigación que han dedicado trabajos a las redes fisiológicas
-  \item \textbf{Problemas abordados por medio de redes fisiológcias}: sección prevista para comentar la cantidad de aplicaciones dentro de los diversos campos biológicos en ciencias de la salud que pueden beneficiarse del estudio de las redes fisiológicas.
+  \item \textbf{Problemas abordados por medio de redes fisiológicas}: sección prevista para comentar la cantidad de aplicaciones dentro de los diversos campos biológicos en ciencias de la salud que pueden beneficiarse del estudio de las redes fisiológicas.
 \end{itemize}
 
 %------------------------------------------------
-\onecolumn
-\begin{center}
-  \begin{table}[t]
-    \begin{tabular}{|p{4cm}p{6cm}p{5cm}|}
-      \hline
-      Estudio & Objetivo & Novedad en el campo \\
-      \hline
-      Bashan et al. (2012) \cite{bashan2012network} &
-      Identificar las propiedades de las redes entre el estado de despierto y los diferentes estados de sueño.
-      &
-      Introduce el concepto de redes fisiológicas. Explica por primera vez el método "Time Delay Stability" en este contexto.
-      \\ \hline
-      Bartsch et al. (2014)\cite{bartsch2014coexisting} &
-      Demostrar la necesidad de utilizar diferentes métodos de acoplamiento entre dos señales fisiológicas.
-      &
-      Utiliza la \textit{sincronización de fase} y los \textit{sincrogramas} en el contexto de redes fisiológicas.
-      \\ \hline
-      Lin et al. (2015) \cite{2015Plasticity} &
-      Describir la interrelación de ondas cerebrales en diferentes regiones del cerebro.
-      &
-      Ahonda en los fenómenos intracerebrales del estudio publicado en el año 2012. Esta vez observamos diferentes regiones cerebrales como nodos.
-      \\ \hline
-    \end{tabular}
-    \caption{Tabla que incluye los 4 resultados encontrados por la búsqueda "(Ivanov, Plamen Ch[Author]) AND (network) ".}
-    \label{tab:plamenGroup}
-  \end{table}
-\end{center}
-\begin{center}
-  \begin{table}[t]
-    \begin{tabular}{|p{4cm}p{6cm}p{5cm}|}
-      \hline
-      Estudio & Objetivo & Novedad en el campo \\
-      \hline
-      Scala et al. (2014) \cite{scala2014complex}&
-        Creación de una red fisiológica a través de puntos anatómicos en imágenes radiológicas haciendo énfasis en el antes y después del tratamiento de la patología.
-        & Primera descripción de patología dental con el abordaje de redes fisiológicas.
-      \\\hline
-      Chmiel et al. (2014) \cite{chmiel2014spreading} &
-      Describir la cantidad y características de las patologías del ser humano en el transcurso de la vida (diferentes grupos etarios)
-      &
-      La descripción de una red utilizando patologías como nodos, utilizando métodos de agrupación por medio de las características de los nodos, y luego formando enlaces entre comunidades utilizando la comorbilidad.
-      \\\hline
-      Monti et al. (2018) \cite{monti2018network} &
-      Identificar genes y proteínas implicadas en la enfermedad de Parkinson, utilizando teoría de redes se identifican los procesos celulares posiblemente implicados. & Primera descripción de la enfermedad de Parkinson en el contexto de redes fisiológicas (proteómica y genética).
-      \\ \hline
-      Eastib et al. (2020) \cite{easton2020metabolic} &
-      Identificar diferentes grupos etarios como estados fisiológicos basados en variables fisiológicas puntuales
-      &
-      Teorizar grupos etarios como estados fisiológicos.
-      La utilización de variables puntuales desde un punto de vista clínico (a diferencia de la genómica o proteómica).
-      Utilización de la correlación de Spearman como método para generar acoplamiento entre las variables.
-      \\\hline
-      Barajas-Martinez et al. (2021) \cite{barajas2021physiological}
-      &
-      Primer intento con el fin de describir con el mayor detalle posible la fisiología de red humana en el estado fisiológico, desde un punto de vista bioquímico. Incluyendo 54 biomarcadores.
-      Utilización de métodos avanzados de detección de comunidades (algoritmos no supervisados).
-      &
-      Primera definición del estado fisiológico en sí mismo, basado en biomarcadores puntuales.
-      \\\hline
-      Barajas-Martinez et al. (2021) \cite{barajas2021sex}
-      &
-      Encontrar diferencias entre las redes fisiológicas formadas por biomarcadores, utilizando el sexo como estado fisiológico.
-      &
-      Discernir las redes fisiológicas basadas en el sexo.
-      Utilizar algoritmos de teoría de redes en cuanto a la detección de comunidades.
-      \\\hline
-    \end{tabular}
-    \caption{Tabla que incluye los 7 resultados encontrados por la búsqueda "network physiology". También incluye los del grupo de investigación C3 de la Universidad Nacional Autónoma de México}
-    \label{tab:allGroups}
-  \end{table}
-\end{center}
-\twocolumn
 
 \section{Resultados}
 La creación e interpretación de redes fisiológicas es un proceso que implica la fusión de varios elementos \cite{barajas2021sex}, que incluyen:
 \begin{itemize}
   \item \textbf{Identificación y definición de los nodos que conformarán la red:} Se definen las señales que formarán parte de la red a forma de nodos.
   \item \textbf{Métodos para definir los enlaces:} El método que se va a utilizar para acoplar las señales y así determinar los enlaces de la red.
-  \item \textbf{Cálculo e interpretación de propiedades topológicas y dinámicas:} \cite{adams2021gabaergic} Una vez construida la red, se deben realizar los análisis dinámicos y topográficos pertinentes e interpretar los resultados.
+  \item \textbf{Cálculo e interpretación de propiedades topológicas y dinámicas:} Una vez construida la red, se deben realizar los análisis dinámicos y topográficos pertinentes e interpretar los resultados.
 \end{itemize}
 
 Para cumplir con estos tres objetivos se han utilizado diversas técnicas a través de los años, las cuales se describen a continuación.
@@ -344,6 +292,138 @@ Es claro que conseguir la cantidad de datos necesarios para plantear el estudio 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------
+\onecolumn
+\begin{center}
+  \begin{table}[t]
+    \begin{tabular}{|p{4cm}p{6cm}p{5cm}|}
+      \hline
+      Estudio & Objetivo & Novedad en el campo \\
+      \hline
+      Bashan et al. (2012) \cite{bashan2012network} &
+      Identificar las propiedades de las redes entre el estado de despierto y los diferentes estados de sueño.
+      &
+      Introduce el concepto de redes fisiológicas. Explica por primera vez el método "Time Delay Stability" en este contexto.
+      \\ \hline
+      Bartsch et al. (2014)\cite{bartsch2014coexisting} &
+      Demostrar la necesidad de utilizar diferentes métodos de acoplamiento entre dos señales fisiológicas.
+      &
+      Utiliza la \textit{sincronización de fase} y los \textit{sincrogramas} en el contexto de redes fisiológicas.
+      \\ \hline
+      Liu et al. (2015)\cite{liu2015major} &
+      &
+      \\ \hline
+      Bartsch et al. (2015)\cite{bartsch2015network} &
+      &
+      \\ \hline
+      Lin et al. (2015) \cite{2015Plasticity} &
+      Describir la interrelación de ondas cerebrales en diferentes regiones del cerebro.
+      &
+      Ahonda en los fenómenos intracerebrales del estudio publicado en el año 2012. Esta vez observamos diferentes regiones cerebrales como nodos.
+      \\ \hline
+      Lin et al. (2016)\cite{lin2016delay} &
+      &
+      \\ \hline
+      Lin et al. (2016)\cite{ivanov2016focus} &
+      &
+      \\ \hline
+      Xiong et al. (2017)\cite{xiong2017entropy} &
+      &
+      \\ \hline
+      Rizzo et al. (2020)\cite{rizzo2020network} &
+      &
+      \\ \hline
+      Lin et al. (2020)\cite{lin2020dynamic} &
+      &
+      \\ \hline
+      Balagué et al. (2020)\cite{balague2020network} &
+      &
+      \\ \hline
+      Nakazato et al. (2020)\cite{nakazato2020estimation} &
+      &
+      \\ \hline
+      Lombardi et al. (2020)\cite{lombardi2020power} &
+      &
+      \\ \hline
+      Lombardi et al. (2020)\cite{lombardi2020critical} &
+      &
+      \\ \hline
+      Podobnik et al. (2020)\cite{podobnik2020beta} &
+      &
+      \\ \hline
+      Nakazato et al. (2021)\cite{ivanov2021signal} &
+      &
+      \\ \hline
+    \end{tabular}
+    \caption{Los 16 artículos publicados por el equipo de Plamen Ivanov concerientes al campo de redes fisiológicas, obtenidos tras la búsqueda "(Ivanov, Plamen Ch[Author]) AND (network) ".}
+    \label{tab:plamenGroup}
+  \end{table}
+\end{center}
+\begin{center}
+  \begin{table}[t]
+    \begin{tabular}{|p{4cm}p{6cm}p{5cm}|}
+      \hline
+      Estudio & Objetivo & Novedad en el campo \\
+      \hline
+      Scala et al. (2014) \cite{scala2014complex}&
+        Creación de una red fisiológica a través de puntos anatómicos en imágenes radiológicas haciendo énfasis en el antes y después del tratamiento de la patología.
+        & Primera descripción de patología dental con el abordaje de redes fisiológicas.
+      \\\hline
+      Chmiel et al. (2014) \cite{chmiel2014spreading} &
+      Describir la cantidad y características de las patologías del ser humano en el transcurso de la vida (diferentes grupos etarios)
+      &
+      La descripción de una red utilizando patologías como nodos, utilizando métodos de agrupación por medio de las características de los nodos, y luego formando enlaces entre comunidades utilizando la comorbilidad.
+      \\\hline
+      Monti et al. (2018) \cite{monti2018network} &
+      Identificar genes y proteínas implicadas en la enfermedad de Parkinson, utilizando teoría de redes se identifican los procesos celulares posiblemente implicados. & Primera descripción de la enfermedad de Parkinson en el contexto de redes fisiológicas (proteómica y genética).
+      \\\hline
+      Pereira et al. (2018) \cite{pereira2018computational} &
+      &
+      \\\hline
+      Pereira et al. (2019) \cite{jansen2019network} &
+      &
+      \\\hline
+      Pereira et al. (2019) \cite{pereira2019complex} &
+      &
+      \\\hline
+      Zanetti et al. (2019) \cite{zanetti2019information} &
+      &
+      \\\hline
+      Antonacci et al. (2020) \cite{antonacci2020information} &
+      &
+      \\\hline
+      Marzbanrad et al. (2020) \cite{tan2020organ} &
+      &
+      \\ \hline
+      Eastib et al. (2020) \cite{easton2020metabolic} &
+      Identificar diferentes grupos etarios como estados fisiológicos basados en variables fisiológicas puntuales
+      &
+      Teorizar grupos etarios como estados fisiológicos.
+      La utilización de variables puntuales desde un punto de vista clínico (a diferencia de la genómica o proteómica).
+      Utilización de la correlación de Spearman como método para generar acoplamiento entre las variables.
+      \\\hline
+      Antonacci et al. (2021) \cite{antonacci2021estimation} &
+      &
+      \\\hline
+      Barajas-Martinez et al. (2021) \cite{barajas2021physiological}
+      &
+      Primer intento con el fin de describir con el mayor detalle posible la fisiología de red humana en el estado fisiológico, desde un punto de vista bioquímico. Incluyendo 54 biomarcadores.
+      Utilización de métodos avanzados de detección de comunidades (algoritmos no supervisados).
+      &
+      Primera definición del estado fisiológico en sí mismo, basado en biomarcadores puntuales.
+      \\\hline
+      Barajas-Martinez et al. (2021) \cite{barajas2021sex}
+      &
+      Encontrar diferencias entre las redes fisiológicas formadas por biomarcadores, utilizando el sexo como estado fisiológico.
+      &
+      Discernir las redes fisiológicas basadas en el sexo.
+      Utilizar algoritmos de teoría de redes en cuanto a la detección de comunidades.
+      \\\hline
+    \end{tabular}
+    \caption{Tabla que incluye los 6 filtrados tras la búsqueda "network physiology". También incluye los del grupo de investigación C3 de la Universidad Nacional Autónoma de México}
+    \label{tab:allGroups}
+  \end{table}
+\end{center}
+\twocolumn
 \renewcommand\refname{Referencias}
 \printbibliography
 \end{document}
