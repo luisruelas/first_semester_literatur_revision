@@ -93,7 +93,7 @@
 \date{28 de mayo de 2021} % Leave empty to omit a date
 \renewcommand{\maketitlehookd}{%
 \begin{abstract}
-\noindent El campo de las redes fisiológicas es una rama de las ciencias biológicas de reciente creación, iniciado por el Dr. Plamen Ch. Ivanov en el año 2012 con su publicación "Network physiology reveals relations between network topology and physiological function" en la revista Nature Communications. Después de esta publicación, múltiples grupos de investigación han utilizado la ciencia de redes en sus respectivas áreas biológicas para obtener nuevas perspectivas multisistémicas e integrales en diversos estados fisiológicos. Las técnicas para obtener e interpretar éstas redes han evolucionado a través del tiempo. Nos encontramos ante un campo prometedor en rápida y continua evolución.
+\noindent El campo de las redes fisiológicas es una rama de las ciencias biológicas de reciente creación, iniciado por el Dr. Plamen Ch. Ivanov en el año 2012 con su publicación "Network physiology reveals relations between network topology and physiological function" en la revista Nature Communications. Después de esta publicación, múltiples grupos de investigación han utilizado la ciencia de redes en sus respectivas áreas biológicas para obtener nuevas perspectivas multisistémicas e integrales en diversos estados fisiológicos. Las técnicas para obtener e interpretar estas redes han evolucionado a través del tiempo. Nos encontramos ante un campo prometedor en rápida y continua evolución.
 \end{abstract}
 }
 
@@ -110,11 +110,11 @@
 %----------------------------------------------------------------------------------------
 
 \section{Introducción}
-En las ciencias médicas existen una multitud de problemas de gran importancia, ya sea por la gravedad de los mismos, la gran cantidad de gente a la que afectan o ambas.
+En las ciencias médicas existen multitud de problemas de gran importancia, ya sea por la gravedad de los mismos, la gran cantidad de gente a la que afectan o ambas.
 Tomemos por ejemplo una de las enfermedades cardiovasculares más importantes en México: la hipertensión arterial.
-Causante de un 18.1\% de las muertes en México\cite{campos2018hipertension}, se diagnostica por medio de las cifras de presión arterial ()$\geq140/90$ al més de una primera determinación de presión arterial\cite{de2008diagnostico});
+Causante de un 18.1\% de las muertes en México\cite{campos2018hipertension}, se diagnostica por medio de las cifras de presión arterial ()$\geq140/90$ al mes de una primera determinación de presión arterial\cite{de2008diagnostico});
 Una vez instaurado el tratamiento (que se da basado en las condiciones del paciente como edad y comorbilidades) el control y éxito del tratamiento se evalúa, una vez más, con la presión arterial.
-Si el paciente además tiene diabetes, se le realizan los estudios pertinentes a esta enfermedad. Si estuvieramos ante una enfermedad del riñón, se estudiaría con parámetros renales. En todo momento, la visión de cada uno de esos problemas se realiza desde la especialidad a la que corresponde, y realmente no existen enfoques objetivos que integren todos los sistemas implicados.
+Si el paciente además tiene diabetes, se le realizan los estudios pertinentes a esta enfermedad. Si estuviéramos ante una enfermedad del riñón, se estudiaría con parámetros renales. En todo momento, la visión de cada uno de esos problemas se realiza desde la especialidad a la que corresponde, y realmente no existen enfoques objetivos que integren todos los sistemas implicados.
 
 El cuerpo humano, como sistema complejo\cite{mobus2015principles}, es un conjunto inmenso de componentes en constante interacción \cite{engel2010thermodynamics}.
 Como una propiedad de este tipo de sistemas, existe un llamado "punto crítico", donde coexiste el estado anterior (en el caso que nos atañe, un estado de no enfermedad) y otro estado diferente (enfermedad).
@@ -131,7 +131,7 @@ Ejemplo de estas técnicas son algoritmos de agrupamiento, que al reunir en grup
 Sin embargo, las conexiones entre diferentes comunidades nos ofrece un paradigma multisistémico, que otorga una perspectiva novedosa al abordar un sistema como parte un complejo más grande con el cual se relaciona de forma objetiva y del cual, generalmente, se aísla para su estudio en una disciplina en cuestión.
 Para mencionar un caso, se pueden describir redes fisiológicas con enlaces entre señales electroencefalográficas y frecuencia cardiaca en diferentes estados fisiológicos, mostrando relación entre dos sistemas corporales (neurológico y cardiovascular) que generalmente se estudian de forma aislada\cite{campos2018hipertension}.
 
-Siendo entoces las redes fisiológicas un campo novedoso, que promete soluciones que la visión reduccionista de los problemas no puede alcanzar con falicidad, surgen dos preguntas centrales:
+Siendo entonces las redes fisiológicas un campo novedoso, que promete soluciones que la visión reduccionista de los problemas no puede alcanzar con facilidad, surgen dos preguntas centrales:
 \begin{itemize}
   \item ¿Qué métodos se utilizan para construir y analizar estas redes fisiológicas?
   \item ¿Qué problemas, dentro de la aplicabilidad biomédica, se han abordado utilizando ésta técnica?
@@ -139,36 +139,8 @@ Siendo entoces las redes fisiológicas un campo novedoso, que promete soluciones
 
 La búsqueda de la respuesta a estas preguntas son el objeto de la siguiente revisión.
 
-\section{Métodos}
-Debido al corto tiempo de vida del campo en cuestión, se decide revisar todos los artículos del Dr. Plamen Ivanov que incluyan redes fisiológicas a partir del año 2012 (inclusivo).
-Para ser incluídos en la revisión, los artículos deben contener un método de construcción o análisis de redes fisiológicas inédito, o ser pertinentes a una nueva patología o estado fisiológico que no hubiese sido estudiado con con anterioridad.
-Se utiliza una búsqueda por autor (el Dr Plamen Ivanov) con el fin de no omitir artículos relevantes del fundador y principal publicador en el tema. Posteriormente se plantean en la búsqueda todos los campos que contengan la palabra clave "network". Al final la primera búsqueda queda planteada de la siguiente manera:
-
-\texttt(Ivanov, Plamen Ch[Author]) AND (network) ,
-
-Obteniendo como resultado 25 coincidencias. Se realiza una lectura diagonal de cada uno de los 25 artículos para obtener una perspectiva de los diferentes elementos históricos y técnicos que conforman redes fisiológicas.
-Se descartan 2 artículos que no incluyen descripción de la metodología y 11 que no tocan el tema de redes fisiológicas. Por lo tanto quean 12 artículos que incluyen métodos para la construcción y análisis de redes fisiológicas. (Tabla \ref{tab:plamenGroup}).
-
-Se plantea una segúnda búsqueda con el término "'network physiology'", que da como resultado 243 resultados.
-
-Se lee a través del título y resumen de todos ellos para  encontrar los que son pertinentes a la fisiología de redes en seres humanos y que no hubieran sido incluídos en la búsqueda anterior.
-Se descartan 2 artículos que no incluyen descripción de la metodología, 18 por haber sido incluídos anteriormente y 211 que no tienen tocan la temática de redes fisiológicas.
-Al final, 12 de los artículos cumplen con los criterios de inclusion (descritos en la Tabla \ref{tab:allGroups}).
-
-Además se presta especial atención a las aplicaciones de fisiología de redes por parte de la UNAM en el centro de estudios de la complejidad C3, que ha sido impulado por el Dr. A Barajas y la Dra. A.L. Rivera.
-
-Una vez obtenido este conocimiento, se comienza la redacción de los resultados, dividiendo la temática en 4 subtítulos relevantes:
-\begin{itemize}
-  \item \textbf{Conceptos fundamentales para el estudio de redes fisiológicas}: En este apartado se describen los diferentes tipos de bases de datos utilizados en la creación de redes fisiológicas, así como una breve descripción de los pasos que habrán de seguirse para obtener una red fisiológica.
-  \item \textbf{Métodos para definir acoplamiento}: por la importancia que tiene en el campo, como iniciador y amplio uso dentro del campo de las redes fisiológicas.
-  \item \textbf{Aplicación de teoría de redes}: para explicar las múltiples técnicas utilizados por los diversos grupos de investigación que han dedicado trabajos a las redes fisiológicas
-  \item \textbf{Problemas abordados por medio de redes fisiológicas}: sección prevista para comentar la cantidad de aplicaciones dentro de los diversos campos biológicos en ciencias de la salud que pueden beneficiarse del estudio de las redes fisiológicas.
-\end{itemize}
-%------------------------------------------------
-
-\section{Resultados}
 \subsection{Conceptos fundamentales para el estudio de redes fisiológicas}
-Para comenzar, existen dos tipos de bases de datos de las cuales se obtendrán redes fisiológicas:
+Existen dos tipos de bases de datos de las cuales se obtendrán redes fisiológicas:
 \begin{itemize}
   \item \textbf{Series de tiempo:} Estas incluyen una multitud de datos puntuales que representan el cambio de una variable fisiológica a través del tiempo.
   En el contexto de las redes fisiológicas, por ejemplo, un objetivo podría ser encontrar la relación entre una serie de tiempo (electroencefalograma) y otra serie de tiempo (electrocardiograma).
@@ -183,58 +155,89 @@ Además, la creación e interpretación de redes fisiológicas es un proceso que
   \item \textbf{Métodos para definir los enlaces:} El método que se va a utilizar para acoplar las señales y así determinar los enlaces de la red.
   \item \textbf{Cálculo e interpretación de propiedades topológicas y dinámicas:} Una vez construida la red, se deben realizar los análisis dinámicos y topológicos pertinentes e interpretar los resultados.
 \end{itemize}
-Una vez establecidos estos conceptos procedemos a describir los métodos utilizados para correlacionar las series de tiempo o bases de datos puntuales antes descritas.
 
-\subsection{Métodos para definir acoplamiento}
-Los métodos utilizados para definir acoplamiento en series de tiempo son:
-\begin{itemize}
-  \item TDS (9 usos por parte del Dr. Plamen, 1 uso por parte de otros grupos, \texttt{ver apéndice donde se describe el método para su cálculo})
-  \item Sincronizacioń de fase (1 uso por parte del grupo del Dr Plamen, \texttt{ver apéndice donde se describe el método para su cálculo})
-\end{itemize}
-A excepción del grupo del Dr. Plamen, la mayoría del resto de las investigaciones incluyen análisis de redes que se obtienen por medio de datos puntuales.
-Las técnicas utilizadas para realizar acoplamiento en estas redes son las siguientes:
-\begin{itemize}
-  \item Correlación de Peason (5 usos en total).
-  \item Correlación de Spearman (5).
-  \item ANOVA (5).
-  \item Prueba F de Fischer (1).
-\end{itemize}
+\section{Métodos}
+Debido al corto tiempo de vida del campo en cuestión, se decide revisar todos los artículos del Dr. Plamen Ivanov que incluyan redes fisiológicas a partir del año 2012 (inclusivo).
+Para ser incluídos en la revisión, los artículos deben contener un método de construcción o análisis de redes fisiológicas inédito, o ser pertinentes a una nueva patología o estado fisiológico que no hubiese sido estudiado con anterioridad.
+Se utiliza una búsqueda por autor (el Dr Plamen Ivanov) con el fin de no omitir artículos relevantes del fundador y principal publicador en el tema. Posteriormente se plantean en la búsqueda todos los campos que contengan la palabra clave "network". Al final la primera búsqueda queda planteada de la siguiente manera:
 
-\subsection{Aplicación de teoría de redes}
-Existen diversas métricas para describir las propiedades de una red y para medir las diferencias entre dos o más redes.
-Las medidas que muestran las propiedades de una red utilizadas en los trabajos que atañen a esta revisión son:
+\texttt(Ivanov, Plamen Ch[Author]) AND (network) ,
+
+Obteniendo como resultado 25 coincidencias. Se realiza una lectura diagonal de cada uno de los 25 artículos para obtener una perspectiva de los diferentes elementos históricos y técnicos que conforman redes fisiológicas.
+Se descartan 2 artículos que no incluyen descripción de la métodología y 11 que no tocan el tema de redes fisiológicas. Por lo tanto quean 12 artículos que incluyen métodos para la construcción y análisis de redes fisiológicas. (Tabla \ref{tab:plamenGroup}).
+
+Se plantea una segunda búsqueda con el término "'network physiology'", que da como resultado 243 resultados.
+
+Se lee a través del título y resumen de todos ellos para  encontrar los que son pertinentes a la fisiología de redes en seres humanos y que no hubieran sido incluídos en la búsqueda anterior.
+Se descartan 2 artículos que no incluyen descripción de la métodología, 18 por haber sido incluídos anteriormente y 211 que no tienen tocan la temática de redes fisiológicas.
+Al final, 12 de los artículos cumplen con los criterios de inclusión (descritos en la Tabla \ref{tab:allGroups}).
+
+Además se presta especial atención a las aplicaciones de fisiología de redes por parte de la UNAM en el centro de estudios de la complejidad C3, que ha sido impulsado por el Dr. A Barajas y la Dra. A.L. Rivera.
+
+Una vez obtenido este conocimiento, se comienza la redacción de los resultados, dividiendo la temática en 4 subtítulos relevantes:
 \begin{itemize}
-\item {\textbf{Topológicas:}} Densidad (2 trabajos), reciprocidad (2), coeficientes de agrupamiento (3), vulnerabilidad a ataques dirigidos (1), nodos por comunidad (3), total de enlaces (3), centralidad de intermediación (2), conexión especifica entre nodos (2), fuerza de los enlaces (3), distribución de grado (2).
-\item {\textbf{Detección de comunidades:}} Algoritmo de Louvain (2), MAP(1), Girvan-Newman (1).
+  \item \textbf{Métodos para definir acoplamiento}: por la importancia que tiene en el campo, como iniciador y amplio uso dentro del campo de las redes fisiológicas.
+  \item \textbf{Aplicación de teoría de redes}: para explicar las múltiples técnicas utilizados por los diversos grupos de investigación que han dedicado trabajos a las redes fisiológicas
+  \item \textbf{Problemas abordados por medio de redes fisiológicas}: sección prevista para comentar la cantidad de aplicaciones dentro de los diversos campos biológicos en ciencias de la salud que pueden beneficiarse del estudio de las redes fisiológicas.
 \end{itemize}
 %------------------------------------------------
 
-\subsection{Aplicación de teoría de redes}
-Los estudios publicados en fisiología de redes han utilizado desde sus inicios análisis básicos de redes para obtener información posterior a la creación de la red fisiológica.
+\section{Resultados}
 
+\subsection{Series de tiempo y bases de datos puntuales}
+De los 24 artículos revisados, hay 9 que manejan series de tiempo, 8 de ellos provienen del grupo del Dr. Plamen \cite{bashan2012network}\cite{bartsch2014coexisting}\cite{liu2015major}\cite{bartsch2015network}\cite{2015Plasticity}\cite{lin2016delay}\cite{rizzo2020network}\cite{lin2020dynamic},\cite{ivanov2021signal}
+y 1 de un grupo diferente\cite{jansen2019network}).
+Los 14 restantes resto (obviando las 2 revisiones bibliogŕaficas) trata de redes formadas a partir de bases de datos puntuales, incluyen solo un artículo del grupo del Dr. Plamen\cite{nakazato2020estimation} y 13 de otros grupos \cite{scala2014complex}\cite{chmiel2014spreading}\cite{monti2018network}\cite{pereira2018computational}\cite{pereira2019complex}\cite{zanetti2019information}\cite{barajas2020metabolic}\cite{lehnertz2020human}\cite{antonacci2020information}\cite{tan2020organ}\cite{barajas2021physiological}\cite{barajas2021sex}\cite{cohen2021robust}.
+
+\subsection{Métodos para definir acoplamiento}
+Los métodos utilizados para definir acoplamiento en series de tiempo incluyen TDS (8 usos por parte del Dr. Plamen\cite{bashan2012network}\cite{bartsch2014coexisting}\cite{liu2015major}\cite{bartsch2015network}\cite{2015Plasticity}\cite{lin2016delay}\cite{rizzo2020network}\cite{lin2020dynamic},\cite{ivanov2021signal}, 1 uso por parte de otros grupos \cite{jansen2019network}(\texttt{ver apéndice donde se describe el método para su cálculo}) y
+el método de sincronizacioń de fase (1 uso por parte del grupo del Dr Plamen\cite{bartsch2014coexisting}, \texttt{(Ver apéndice donde se describe el método para su cálculo})
+
+El resto de las investigaciones que no son series incluyen análisis de redes que se obtienen por medio de datos puntuales.
+Las técnicas utilizadas para realizar acoplamiento en estas redes son las siguientes:
+5 usos de correlación de Pearson\cite{nakazato2020estimation}\cite{scala2014complex}\cite{chmiel2014spreading}\cite{pereira2018computational}\cite{tan2020organ},
+5 instancias de correlación de Spearman\cite{barajas2020metabolic}\cite{barajas2021physiological}\cite{barajas2021sex}\cite{pereira2018computational}\cite{nakazato2020estimation}.
+2 de ANOVA  \cite{zanetti2019information}\cite{rizzo2020network},
+y 1 instancia de Prueba F de Fischer \cite{zanetti2019information}.
+
+\subsection{Aplicación de teoría de redes}
+Existen diversas métricas para describir las propiedades de una red y para medir las diferencias entre dos o más redes.
+Las medidas que muestran las propiedades de una red utilizadas en los trabajos que atañen a esta revisión son
+propiedades topológicas como densidad \cite{barajas2021sex}\cite{barajas2021physiological}, reciprocidad \cite{barajas2021sex}\cite{barajas2021physiological}, coeficientes de agrupamiento\cite{monti2018network}\cite{barajas2021sex}\cite{barajas2021physiological}, vulnerabilidad a ataques dirigidos\cite{barajas2021physiological}, nodos por comunidad \cite{chmiel2014spreading}, total de enlaces \cite{tan2020organ}\cite{bashan2012network}, centralidad de intermediación \cite{tan2020organ}, fuerza de los enlaces\cite{pereira2018computational}\cite{bartsch2014coexisting}\cite{bartsch2015network} y distribución de grado\cite{monti2018network}\cite{lin2020dynamic}.
+
+También se disciernen las técnicas de detección de comunidades como el algoritmo de Louvain\cite{barajas2021sex}\cite{barajas2021physiological}, MAP\cite{barajas2020metabolic}, Girvan-Newman\cite{scala2014complex}.
+
+%------------------------------------------------
 \subsection{Problemas abordados por medio de redes fisiológicas}
-El abordaje de diferentes temas se ha realizado por medio de redes fisiológicas. Por supuesto, los estudios de sueño, que disciernen estados fisiológicos del sueño y el estado de despierto, son numerosos debido al grupo del Dr. Plamen (con un total del 10 estudios).
-Sin embargo otros campos se han beneficiado de estos:
-\begin{itemize}
-  \item Odontología (malaoclusión): 1 trabajo. \cite{scala2014complex}
-  \item Enfermedades renales: 1. \cite{tan2020organ}
-  \item Insomnio: 1. \cite{jansen2019network}
-  \item Parkinson: 1. \cite{monti2018network}
-  \item Estrés(inducido): 1 \cite{zanetti2019information}
-  \item Fisiología del deporte: 3\cite{balague2020network}\cite{pereira2018computational}\cite{pereira2019complex}
-  \item Estados fisiológicos, incluidos estados fisiológicos por edad o sexo: 3\cite{chmiel2014spreading}\cite{barajas2020metabolic}\cite{lehnertz2020human}\cite{barajas2021physiological}\cite{barajas2021sex}
-\end{itemize}
+El abordaje de diferentes temas se ha realizado por medio de redes fisiológicas. Por supuesto, los estudios de sueño, que disciernen estados fisiológicos del sueño y el estado de despierto, son númerosos debido al grupo del Dr. Plamen (con un total de 10 estudios).
+Otros campos incluyen: Odontología (maloclusión\cite{scala2014complex}, enfermedades renales\cite{tan2020organ}, insomnio\cite{jansen2019network}, Parkinson\cite{monti2018network}, estrés(inducido)\cite{zanetti2019information}, fisiología del deporte: 3 artículos\cite{balague2020network}\cite{pereira2018computational}\cite{pereira2019complex} y estudios de stados fisiológicos, incluidos estados fisiológicos por edad\cite{chmiel2014spreading}\cite{barajas2020metabolic}\cite{lehnertz2020human}\cite{barajas2021physiological} o sexo\cite{barajas2021sex}.
 \section{Discusión}
 En los primeros estudios del grupo de Dr. Plamen acerca de redes fisiológicas en humanos, existe una clara tendencia a utilizar series de tiempo, esto probablemente debido a que posee una excelente cohorte de pacientes sanos con estudio completo de polisomnografía\cite{bashan2012network}.
-Sin embargo el resto de los grupo de investigación continúa en una dirección diferente, ya que las bases de datos que se utilizan generalmente contienen datos puntuales, es entendible que métodos para crear redes fisiológicas con este tipo de base de datos hayan sido desarrollados.
+Sin embargo el resto de los grupos de investigación continúa en una dirección diferente, ya que las bases de datos que se utilizan en el mundo clínico, contienen mayormente datos puntuales (biomarcadores, signos vitales, estudios de imagen...), es entendible que métodos para crear redes fisiológicas con este tipo de base de datos hayan sido desarrollados.
+Obtener bases de datos que incluyan series de tiempo para determinar estados fisiológicos debe ser una prioridad para los grupos de investigación que realicen investigaciones nuevas en el campo de fisiología de redes.
+Por otro lado, si se continúan realizando investigaciones con datos previamente obtenidos (bases de datos nacionales, de seguridad social, expedientes clínicos...) lo más probable es que la tendencia continúe hacia la utilización de medidas puntuales.
+Es probablemente por esta razón que vemos un decremento considerable en el uso de TDS por otros grupos, a pesar de ser uno de los parametros más confiables para determinar acoplamiento entre series de tiempo\cite{bartsch2014coexisting}.
+
+En cuanto a las patologías abordadas, podemos ver que la fisiología del ejercicio ya cuenta con algunos artículos\cite{pereira2018computational}\cite{pereira2019complex} además de la revisión bibliográfica que plantea el campo\cite{balague2020network}.
+En este campo no tenemos aún datos con series de tiempo, además no tenemos cohortes específicamente diseñadas con el propósito de estudiar el campo, se trata de un campo con gran potencial que aún no ha sido explotado.
+
+En éste mismo rubro también encontramos enfermedades neurológicas como Parkinson\cite{monti2018network}, insomnio \cite{jansen2019network} y un esbozo por entender el cerebro en estrés\cite{zanetti2019information}.
+Desde sus inicios el grupo de el Dr. Plamen se ha concentrado en una cohorte que discierne estados fisiológicos de sueño y el estado de despierto, por lo que ver abordajes que incluyan enfermedades neurológicas, y estados fisiológicos más allá de este contexto es interesante.
+Un campo virgen y un siguiente paso lógico puede ser el estudio de enfermedades mentales más prevalentes como depresión y distimia por medio de redes fisiológicas. Estas podrían incluso realizarse con escalas validadas eque incluyan información puntual, como prueba de concepto (Hamilon, Goldberg...).
+
+El campo de la odontología también se ha aprovechado de estas técnicas para crear modelos que muestran cómo (y potencialmente, \texttt{¿por qué?}) mejoran los pacientes con maloclusión\cite{scala2014complex}.
+
+El esfuerzo por crear redes fisiológicas\cite{barajas2021physiological}\cite{barajas2021sex} que representen estados en personas sanas también es un hecho a considerar.
+Es relevante considerar que en el futuro estas redes pueden usarse para comparar resultados encontrados en patologías, creando así un "Atlas de redes fisiológicas humano" (similar a la idea que plantea el grupo del Dr. Plamen en su revisión\cite{ivanov2016focus}).
 
 Además, cada vez se hace un mayor énfasis en el análisis de redes.
-Por medio de un mayor uso de métricas de teoría de redes que nos proveen información interesante acerca de los sitemas de estudios conforme avanza el campo de redes fisiológicas.
-Gracias al desarrollo de métodologías que nos permiten utilizar bases de datos más pequeñas para crear redes fisiológicas, el alcance del campo también ha aumentado para los investigadores en el futuro \cite{cohen2021robust}.
+Por medio de un mayor uso de métricas de teoría de redes que nos proveen información interesante acerca de los sistemas de estudios conforme avanza el campo de redes fisiológicas.
+Gracias al desarrollo de metodologías que nos permiten utilizar bases de datos más pequeñas para crear redes fisiológicas, el alcance del campo también ha aumentado para los investigadores en el futuro \cite{cohen2021robust}.
 Nos dirigimos hacia el objetivo de una red que integre la totalidad de funciones humanas\cite{barajas2021physiological}.
 
 El campo de las redes fisiológicas provee una visión integral multisistémica.
-Por tanto importante plantear las investigaciones de enfermedades con alta prevalencia, morbimortalidad y escencialmente multiorganicas (hipertensión arterial, diabetes, obesidad...), con el objetivo de obtener perspectivas novedosas acerca del diagnóstico, tratamiento y pronóstico de éstas patologías.
+Es interesante que aún no se hayan abordado las enfermedades que causan mayor mortalidad en el mundo por medio de este enfoque.
+Enfermedades con alta prevalencia, morbimortalidad y esencialmente multiorgánicas (hipertensión arterial, diabetes, obesidad...), podrían ser abordadas por este campo con el objetivo de obtener perspectivas novedosas acerca del diagnóstico, tratamiento y pronóstico de estas patologías.
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------
@@ -242,13 +245,22 @@ Por tanto importante plantear las investigaciones de enfermedades con alta preva
 \onecolumn
 \begin{center}
   \begin{longtable}{|p{.2\textwidth}p{.4\textwidth}p{.4\textwidth}|}
+    \caption{Los 12 artículos publicados por el equipo de Plamen Ivanov concernientes al campo de redes fisiológicas, obtenidos tras la búsqueda "(Ivanov, Plamen Ch[Author]) AND (network) ".
+    \texttt{TDS}: Time Delay Stability
+    \texttt{CRPS}: Sincronización de fase cardiorrespiratoria
+    \texttt{RSA}: Arritmia respiratoria
+    \texttt{MCA}: Análisis de componente más grande
+    \texttt{CCF}: Correlación cruzada
+    \texttt{ANOVA}: análisis de varianza de un factor
+    \texttt{PCA}: Análisis de componente principal
+    }\\
     \hline
     \textbf{Referencia} & \textbf{Métodos} & \textbf{Población} \\
     \hline
     Bashan et al. (2012) \cite{bashan2012network} &
     TDS.
     Visualización de redes.
-    Analisis de redes (topología: numero de enlaces, fuerza de los enlaces, grado de los nodos, grado de los enlaces)
+    Análisis de redes (topología: número de enlaces, fuerza de los enlaces, grado de los nodos, grado de los enlaces)
     &
     36 pacientes sanos (18 hombres , 18 mujeres, de 20 a 40 años de edad) sometidos a polisomnografía durante el sueño.
     \\ \hline
@@ -282,7 +294,7 @@ Por tanto importante plantear las investigaciones de enfermedades con alta preva
     CC,
     Mapa de retraso-correlación, TDS
     &
-    34 pacientes sanos (17 hombres, 17 mujeres, entre 20 y 40 años). Medidos con polisonmnografía durante el sueño nocturno.
+    34 pacientes sanos (17 hombres, 17 mujeres, entre 20 y 40 años). Medidos con polisomnografía durante el sueño nocturno.
     \\ \hline
     Lin et al. (2016)\cite{ivanov2016focus} &
     N/A
@@ -292,14 +304,14 @@ Por tanto importante plantear las investigaciones de enfermedades con alta preva
     Rizzo et al. (2020)\cite{rizzo2020network} &
     TDS.
     Análisis estadístico: ANOVA (aplicado a los rangos).
-    Analisis de redes: fuerza promedio de los enlaces
+    Análisis de redes: fuerza promedio de los enlaces
     &
     36 pacientes sanos (18 hombres , 18 mujeres, de 20 a 40 años de edad) sometidos a polisomnografía durante el sueño.
     \\ \hline
     Lin et al. (2020)\cite{lin2020dynamic} &
     TDS, CC, Distribución de valores de CC, decomposición espectral de ondas.
     &
-    34 pacientes sanos (17 hombres, 17 mujeres, entre 20 y 40 años). Medidos con polisonmnografía durante el sueño nocturno.
+    34 pacientes sanos (17 hombres, 17 mujeres, entre 20 y 40 años). Medidos con polisomnografía durante el sueño nocturno.
     \\ \hline
     Balagué et al. (2020)\cite{balague2020network} &
     N/A
@@ -310,37 +322,29 @@ Por tanto importante plantear las investigaciones de enfermedades con alta preva
     Correlación de Spearman, correlación de Pearson, prueba exacta de Fischer.
     PCA.
     &
-    580 pacientes con más de 6 meses en tratamiento de hemodiálisis. 140 fueron reclutados analisis de fragilidad.
+    580 pacientes con más de 6 meses en tratamiento de hemodiálisis. 140 fueron reclutados Análisis de fragilidad.
     \\ \hline
-    Nakazato et al. (2021)\cite{ivanov2021signal} &
+    Ivanov et al. (2021)\cite{ivanov2021signal} &
     TDS.
     Análisis de redes: fuerza de los enlaces por \% de TDS.
     &
     52 pacientes sanos, 26 hombres, 26 mujeres, de entre 20 y 34 años. Medicos con polisomnografía durante el sueño nocturno.
     \\ \hline
-    \caption{Los 12 artículos publicados por el equipo de Plamen Ivanov concernientes al campo de redes fisiológicas, obtenidos tras la búsqueda "(Ivanov, Plamen Ch[Author]) AND (network) ".
-    \texttt{TDS}: Time Delay Stability
-    \texttt{CRPS}: Sincornización de fase cardiorrespiratoria
-    \texttt{RSA}: Arritmia respiratoria
-    \texttt{MCA}: Analisis de componente más grande
-    \texttt{CCF}: Correlación cruzada
-    \texttt{ANOVA}: análisis de varianza de un factor
-    \texttt{PCA}: Análisis de componente principal
-    }
     \label{tab:plamenGroup}
   \end{longtable}
 \end{center}
-\begin{center}[h]
+\begin{center}
   \begin{longtable}{|p{0.2\textwidth}p{0.4\textwidth}p{0.4\textwidth}|}
+    \caption{Tabla que incluye los 12 artíclos tras la búsqueda "network physiology". También incluye los del grupo de investigación C3 de la Universidad Nacional Autónoma de México}\\
     \hline
     \textbf{Estudio} & \textbf{Objetivo} & \textbf{Novedad en el campo} \\
     \hline
     Scala et al. (2014) \cite{scala2014complex}&
-    Medición de 21 puntos toconómicos en resonancia magnética nuclear.
+    Medición de 21 puntos anatómicos en resonancia magnética nuclear.
     Correlación de Pearson.
     Girvan–Newman para detección de comunidades.
     &
-    70 pacientes con protusión mandibular (malaoclusión grado III) 40 hombres, 30 mujeres, de entre 7 y 13 años.
+    70 pacientes con protrusión mandibular (maloclusión grado III) 40 hombres, 30 mujeres, de entre 7 y 13 años.
     \\\hline
     Chmiel et al. (2014) \cite{chmiel2014spreading} &
     Medidas estadísticas: prevalencia por grupo de edad, riesgo condicionado.
@@ -350,7 +354,7 @@ Por tanto importante plantear las investigaciones de enfermedades con alta preva
     Base de datos de la Asociación principal de Seguridad Social de Austria. 1,862,258 pacientes, 1,064,952 mujeres, 797,306 hombres.
     \\\hline
     Monti et al. (2018) \cite{monti2018network} &
-    Analisis de rutas metabólicas, minería de cadenas de texto.
+    Análisis de rutas metabólicas, minería de cadenas de texto.
     Anlisis de redes: distribución de grado, coeficientes de agrupamientos, caminos más cortos.
     &
     Busqueda de terminos proteom*[Title/Abstract]) AND Parkinson* [Title/Abstract] en PubMed.
@@ -363,7 +367,7 @@ Por tanto importante plantear las investigaciones de enfermedades con alta preva
     \\\hline
     Jansen et al. (2019) \cite{jansen2019network} &
     TDS, \% de TDS.
-    Analsis de redes: Redes neuronales, arboles de decisión. Conexión específica.
+    Análisis de redes: Redes neuronales, árboles de decisión. Conexión específica.
     &
     64 pacientes con insomnio (41 mujeres, 23 hombres), media 51 años. Datos de polisomnografía.
     197 sujetos sanos. Datos de polisomnografía.
@@ -388,26 +392,26 @@ Por tanto importante plantear las investigaciones de enfermedades con alta preva
     &
     Simulación de diferentes escenarios.
     \\\hline
-    Marzbanrad et al. (2020) \cite{tan2020organ} &
+    Tan et al. (2020) \cite{tan2020organ} &
     Correlación de Pearson.
-    Analsis de la red: Total de enlaces. Conectividad promedio. Centralidad de intermedicación.
+    Análisis de la red: Total de enlaces. Conectividad promedio. Centralidad de intermediación.
     &
-    201 pacientes, 156 hombres, 145 mujeres con cirrosis hepática sin carcinoma hepatocelular. Dividos en supervivientes y no supervivientes.
+    201 pacientes, 156 hombres, 145 mujeres con cirrosis hepática sin carcinoma hepatocelular. Divididos en supervivientes y no supervivientes.
     \\ \hline
     Barajas et al. (2020) \cite{barajas2020metabolic} &
     Correlación de Spearman.
     Eigencentralidad
-    Análisis de red: Analisis de componentes (Louvain y MAP), medidas de topología: densidad, reciprocidad, tamaño de los caminos, transitividad, coeficiente de agrupamiento.
+    Análisis de red: Análisis de componentes (Louvain y MAP), medidas de topología: densidad, reciprocidad, tamaño de los caminos, transitividad, coeficiente de agrupamiento.
     &
-    2572 entre 18 y 81 años de la ciudad de México, dividida en grupos de edad, con un promedio de 65\% muejeres.
+    2572 entre 18 y 81 años de la ciudad de México, dividida en grupos de edad, con un promedio de 65\% mujeres.
     \\\hline
     Barajas-Martinez et al. (2021) \cite{barajas2021physiological}
     &
     Correlación de Spearman.
     Eigencentralidad
-    Análisis de red: Analisis de componentes (Louvain), medidas de topología: densidad, reciprocidad, tamaño de los caminos, transitividad, coeficiente de agrupamiento.
+    Análisis de red: Análisis de componentes (Louvain), medidas de topología: densidad, reciprocidad, tamaño de los caminos, transitividad, coeficiente de agrupamiento.
     &
-    Analisis cardiaco: 10 hombres y 10 mujeres entre 21 y 34 años de edad; 10 hombres y 10 mujeres de entre 65 y 85 años de edad, medidos con 120mins de electrocardiograma.
+    Análisis cardiaco: 10 hombres y 10 mujeres entre 21 y 34 años de edad; 10 hombres y 10 mujeres de entre 65 y 85 años de edad, medidos con 120mins de electrocardiograma.
     Análisis bioquímico: dos bases de datos, la primera del Instituto Nacional de Enfermedades Respiratorias (INER), 134 pacientes, 43 hombres y 91 mujeres, de entre 25 y 67 años; Estudiantes de primer y segundo año de la facultad de medicina UNAM, 844 participantes 281 hombres y 563 mujeres
     \\\hline
     Barajas-Martinez et al. (2021) \cite{barajas2021sex}
@@ -419,7 +423,6 @@ Por tanto importante plantear las investigaciones de enfermedades con alta preva
     Estudiantes de primer y segundo año de la facultad de medicina UNAM, 844 participantes 281 hombres y 563 mujeres
     30 redes creadas para mujeres y 30 para hombres, de entre 117 individuos seleccionados al azar.
     \\\hline
-    \caption{Tabla que incluye los 12 artíclos tras la búsqueda "network physiology". También incluye los del grupo de investigación C3 de la Universidad Nacional Autónoma de México}
     \label{tab:allGroups}
   \end{longtable}
 \end{center}
@@ -457,7 +460,7 @@ Las señales utilizadas pueden ser el flujo de aire nasal o el perímetro torác
 Uno de los procesos para evaluar acoplamiento en señales no lineales es evaluarlas a través de sincrogramas \cite{bartsch2014coexisting}.
 En este caso se van a graficar los eventos de una segunda señal no oscilatoria (en este caso electrocardiograma) sobre una señal continua oscilatoria que es la señal de frecuencia respiratoria $r(t)$. El evento de segunda señal se puede definir como el punto más alto del complejo QRS (pico de onda R) en el electrocardiograma $t_k$.
 Una vez hecho esto se puede identificar la fase respiratoria instantanea $\phi_r(t)$, correspondiente a un evento de electrocardiograma determinado. Así  $\phi_r(t)$ representará el ángulo de la señal $r(t)$ y su transformada de Hilbert $r_H(t)$ que a su vez corresponde a la parte imaginaria de $\phi_r(t)$.
-La gráfica de ángulos $\phi_r(t_k)$ nos otorga el sincrograma que se puede observar en la Figura \ref{fig:synchrogram}. Se define entonces el acoplamiento si existe un numero $n$ de líneas paralelas, donde $n$ es el número de latidos por ciclo respiratorio, como en la Figura \ref{fig:linePlotting}.
+La gráfica de ángulos $\phi_r(t_k)$ nos otorga el sincrograma que se puede observar en la Figura \ref{fig:synchrogram}. Se define entonces el acoplamiento si existe un número $n$ de líneas paralelas, donde $n$ es el número de latidos por ciclo respiratorio, como en la Figura \ref{fig:linePlotting}.
 
 \begin{figure}[H]
 \includegraphics[width=8cm]{linePlotting.png}
